@@ -7,7 +7,7 @@ public class TestStartBehaviorScript : MonoBehaviour {
 
 
 	GameObject startPanel;
-	Re
+
 
 
 	// Use this for initialization
