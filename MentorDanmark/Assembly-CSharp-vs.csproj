@@ -46,10 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BehaviorScript.cs" />
-     <Compile Include="Assets\Scripts\TestBehaviourScript.cs" />
-     <Compile Include="Assets\Scripts\TestStartBehaviorScript.cs" />
-     <Compile Include="Assets\Scripts\TestValueScript.cs" />
+     <Compile Include="Assets\Scripts\ChangePageScript.cs" />
+     <Compile Include="Assets\Scripts\ValueScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
