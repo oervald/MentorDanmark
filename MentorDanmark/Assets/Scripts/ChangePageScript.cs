@@ -20,6 +20,7 @@ public class ChangePageScript : MonoBehaviour {
 	private int pageNumber;
 	
 	ArrayList siteList;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -36,7 +37,7 @@ public class ChangePageScript : MonoBehaviour {
 		siteList.Add (Temperatur);
 		siteList.Add (Design);
 		siteList.Add (Bevaegelse);
-		
+
 		pageNumber = 1;
 		StartPage.transform.SetAsLastSibling ();
 		
@@ -52,7 +53,7 @@ public class ChangePageScript : MonoBehaviour {
 		active = (RectTransform) siteList[pageNumber];
 		active.transform.SetAsLastSibling();
 		pageNumber++;
-		
+
 		
 	}
 }

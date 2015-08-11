@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ValueScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ThreeInputScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\ValueScript.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\ValueScript.cs" Line="145" Column="13" />
+      <File FileName="Assets\Scripts\ChangePageScript.cs" Line="56" Column="3" />
+      <File FileName="Assets\Scripts\HolistiskScript.cs" Line="46" Column="18" />
+      <File FileName="Assets\Scripts\ThreeInputScript.cs" Line="10" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
