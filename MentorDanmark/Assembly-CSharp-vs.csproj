@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ChangePageScript.cs" />
      <Compile Include="Assets\Scripts\HolistiskScript.cs" />
      <Compile Include="Assets\Scripts\ThreeInputScript.cs" />
+     <Compile Include="Assets\Scripts\ToggleScript.cs" />
      <Compile Include="Assets\Scripts\TwoInputScript.cs" />
      <Compile Include="Assets\Scripts\ValueScript.cs" />
  <Reference Include="UnityEngine.UI">
