@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ChangePangeScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ValueScript.cs">
     <Files>
-      <File FileName="..\..\..\Desktop\TestStartBehaviorScript.cs" Line="56" Column="1" />
-      <File FileName="Assets\Scripts\ChangePangeScript.cs" Line="34" Column="29" />
+      <File FileName="Assets\Scripts\ValueScript.cs" Line="7" Column="1" />
+      <File FileName="..\..\..\Desktop\TestStartBehaviorScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ChangePangeScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
