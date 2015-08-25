@@ -121,8 +121,8 @@ public class ListItem : MonoBehaviour
 					height += LayoutUtility.GetPreferredHeight(le.GetComponent<RectTransform>());
 				
 				if(transform.GetSiblingIndex() == 3){
-					print ("name = " + le.name + " " + LayoutUtility.GetPreferredHeight(le.GetComponent<RectTransform>()));
-					print (transform.GetSiblingIndex() + " new height: " + height);
+				//	print ("name = " + le.name + " " + LayoutUtility.GetPreferredHeight(le.GetComponent<RectTransform>()));
+				//	print (transform.GetSiblingIndex() + " new height: " + height);
 				}
 			}
 		}
