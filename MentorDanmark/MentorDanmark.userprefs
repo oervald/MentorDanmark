@@ -1,13 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DanishStrings.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TestSiteScripts\QuizzOptionHandler.cs">
     <Files>
-      <File FileName="Assets\Scripts\DanishStrings.cs" Line="95" Column="117" />
-      <File FileName="Assets\Scripts\ResultController.cs" Line="12" Column="34" />
+      <File FileName="Assets\Scripts\TestSiteScripts\QuizzOptionHandler.cs" Line="29" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\BlaBla.cs" line="33" />
+      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\BlaBla.cs" line="34" />
+      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\BlaBla.cs" line="20" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
