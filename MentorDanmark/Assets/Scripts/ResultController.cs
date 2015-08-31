@@ -4,8 +4,12 @@ using System.Collections;
 
 public class ResultController : MonoBehaviour {
 
-	[Header("Headline")]
+	[Header("Headlines")]
 	public Text headlineText;
+	public Text SubTitleTitel;
+	public Text SubTitleThinkingStyle;
+	public Text SubTitlePreferences;
+	public Text SubTitleEnvironment;
 
 	[Header("Images")]
 	public Image holistiskImage;
@@ -31,19 +35,13 @@ public class ResultController : MonoBehaviour {
 	public Text kineastetiskText;
 	public Text buttomText;
 
-	float analytikFloat = 0.25f;
-	
-	float auditivFloat = 0.50f;
-	float taktilFloat = 0f;
-	float kineastetiskFloat = 0.25f;
 
 	bool foldout = false;
 
 	// Use this for initialization
 	void Start () {
 		setImagesToFalse ();
-		setHAImage (analytikFloat);
-		setVATKImage (auditivFloat, taktilFloat, kineastetiskFloat);
+		DanishStrings danishStrings = new DanishStrings ();
 	}
 	
 	// Update is called once per frame
