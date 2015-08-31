@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ListItem\ListItemStudent.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultController.cs">
     <Files>
-      <File FileName="Assets\Scripts\ListItem\ListItem.cs" Line="125" Column="7" />
-      <File FileName="Assets\Scripts\ListItem\ListItemStudent.cs" Line="27" Column="3" />
-      <File FileName="..\..\MobileApp\MD_Rapport\Assets\Scripts\ListItem\ListItemTrial.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResultController.cs" Line="32" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

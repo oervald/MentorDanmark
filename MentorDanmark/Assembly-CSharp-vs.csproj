@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\ChangePangeScript.cs" />
      <Compile Include="Assets\Scripts\ListItem\ListItem.cs" />
      <Compile Include="Assets\Scripts\ListItem\ListItemStudent.cs" />
+     <Compile Include="Assets\Scripts\ResultController.cs" />
      <Compile Include="Assets\Scripts\ValueScript.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
