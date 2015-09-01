@@ -34,7 +34,11 @@ public class ResultController : MonoBehaviour {
 	public Text kineastetiskHeadline;
 	public Text kineastetiskText;
 	public Text buttomText;
-
+	public Text envirLight;
+	public Text envirSound;
+	public Text envirTemp;
+	public Text envirConfert;
+	public Text envirMovment;
 
 	bool foldout = false;
 

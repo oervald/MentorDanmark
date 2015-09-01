@@ -48,42 +48,6 @@ public class DanishStrings : MonoBehaviour {
 	public DanishStrings (){
 	}
 
-	public DanishStrings (string subTitleResult, string subTitleThinkingStyle, string subTitlePreferences, string subTitleEnvironment, string subTitleEnvirDescript, string titleAnalyst1, string titleAnalyst2Part1, string titleAnalyst2Part2, string descpriptionAnalyst, string titleHolistic1, string titleHolistic2Part1, string titleHolistic2Part2, string descpriptionHolistic, string titleVisual1, string titleVisual2Part1, string titleVisual2Part2, string descpriptionVisual, string titleAuditory1, string titleAuditory2Part1, string titleAuditory2Part2, string descpriptionAuditory, string titleTactile1, string titleTactile2Part1, string titleTactile2Part2, string descpriptionTactile, string titleKinesthetic1, string titleKinesthetic2Part1, string titleKinesthetic2Part2, string descpriptionKinesthetic, string btnTxtTagTest, string btnTxtTagOm)
-	{
-		this.subTitleResult = subTitleResult;
-		this.subTitleThinkingStyle = subTitleThinkingStyle;
-		this.subTitlePreferences = subTitlePreferences;
-		this.subTitleEnvironment = subTitleEnvironment;
-		this.subTitleEnvirDescript = subTitleEnvirDescript; 
-		this.titleAnalyst1 = titleAnalyst1;
-		this.titleAnalyst2Part1 = titleAnalyst2Part1;
-		this.titleAnalyst2Part2 = titleAnalyst2Part2;
-		this.descpriptionAnalyst = descpriptionAnalyst;
-		this.titleHolistic1 = titleHolistic1;
-		this.titleHolistic2Part1 = titleHolistic2Part1;
-		this.titleHolistic2Part2 = titleHolistic2Part2;
-		this.descpriptionHolistic = descpriptionHolistic;
-		this.titleVisual1 = titleVisual1;
-		this.titleVisual2Part1 = titleVisual2Part1;
-		this.titleVisual2Part2 = titleVisual2Part2;
-		this.descpriptionVisual = descpriptionVisual;
-		this.titleAuditory1 = titleAuditory1;
-		this.titleAuditory2Part1 = titleAuditory2Part1;
-		this.titleAuditory2Part2 = titleAuditory2Part2;
-		this.descpriptionAuditory = descpriptionAuditory;
-		this.titleTactile1 = titleTactile1;
-		this.titleTactile2Part1 = titleTactile2Part1;
-		this.titleTactile2Part2 = titleTactile2Part2;
-		this.descpriptionTactile = descpriptionTactile;
-		this.titleKinesthetic1 = titleKinesthetic1;
-		this.titleKinesthetic2Part1 = titleKinesthetic2Part1;
-		this.titleKinesthetic2Part2 = titleKinesthetic2Part2;
-		this.descpriptionKinesthetic = descpriptionKinesthetic;
-		this.btnTxtTagTest = btnTxtTagTest;
-		this.btnTxtTagOm = btnTxtTagOm;
-	}
-
-	
 	string SubTitleResult {get {return "Læringsstilstest Resultater";}}
 	
 	string SubTitleThinkingStyle {get {return "Tænkestil";}}
@@ -92,14 +56,26 @@ public class DanishStrings : MonoBehaviour {
 	
 	string SubTitleEnvironment {get {return "Læringsmiljø";}}
 
-	string SubTitleEnvirDescript {get {return "- Sørg for at arbejde ved en god lampe eller tæt på vinduet- Sørg for at sidde et sted med baggrundsstøj fra andre eller musik- Sørg for at sidde et køligt sted- Sørg for at sidde ved et godt bord- Sørg for at holde bevægelsespauser"; }}
-	
+	string EnvirLightLight{get {return "- Sørg for at arbejde ved en god lampe eller tæt på vinduet";}}
+	string EnvirLightDark{get {return "";}}
+
+	string EnvirSoundOn{get {return "- Sørg for at sidde et sted med baggrundsstøj fra andre eller musik";}}
+	string EnvirSoundOff{get {return "";}}
+
+	string EnvirTempHot{get {return "";}}
+	string EnvirTempCold{get {return "- Sørg for at sidde et køligt sted";}}
+
+	string EnvirConfertTable{get {return "- Sørg for at sidde ved et godt bord";}}
+	string EnvirConfertSofa{get {return "";}}
+
+	string EnvirMovment{get {return "- Sørg for at holde bevægelsespauser";}}
+
 	string TitleAnalyst {get {return "Du er primært analytikker";}}
 	
 	string TitleAnalyst2Part1 {get {return "Du er";}}
 	string TitleAnalyst2Part2  {get {return "analytikker";}}
 	
-	string DescpriptionAnalyst {get {return "Som analytiker foretrækker du at arbejde med én opgave ad gangen.                  Det er væsentligt, at der er system i arbejdet, og der er mulighed for at lægge vægt på detaljerne.Du søger faste rammer, når der skal læres, og du har derfor brug for at planlægge dit arbejde, så der er en god logik og struktur i rækkefølgen. Du kan lide at arbejde fokuseret og koncentreret uden afbrydelser og forstyrrelser og foretrækker også at komme hurtigt i gang med opgaverne.Du skal derfor sørge for at:-	Planlægge en rækkefølge for opgaverne fra starten-	Gå direkte i gang med opgaverne – én ad gangen-	Have god orden og struktur i tingene – gerne konkrete anvisninger-	Give tid til detaljerne";}}
+	string DescpriptionAnalyst {get {return "Som analytiker foretrækker du at arbejde med én opgave ad gangen. Det er væsentligt, at der er system i arbejdet, og der er mulighed for at lægge vægt på detaljerne.Du søger faste rammer, når der skal læres, og du har derfor brug for at planlægge dit arbejde, så der er en god logik og struktur i rækkefølgen. Du kan lide at arbejde fokuseret og koncentreret uden afbrydelser og forstyrrelser og foretrækker også at komme hurtigt i gang med opgaverne.Du skal derfor sørge for at:-	Planlægge en rækkefølge for opgaverne fra starten-	Gå direkte i gang med opgaverne – én ad gangen-	Have god orden og struktur i tingene – gerne konkrete anvisninger-	Give tid til detaljerne";}}
 	
 	
 	string TitleHolistic1 {get {return "Du er primært holitisk";}}
