@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//indholder stings til dansk text til appen.
+
 public class DanishStrings : MonoBehaviour {
 	
 	private string subTitleResult; 

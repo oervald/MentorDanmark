@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DanishStrings.cs">
     <Files>
-      <File FileName="Assets\Scripts\DanishStrings.cs" Line="71" Column="21" />
-      <File FileName="Assets\Scripts\ResultController.cs" Line="20" Column="27" />
+      <File FileName="Assets\Scripts\DanishStrings.cs" Line="4" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

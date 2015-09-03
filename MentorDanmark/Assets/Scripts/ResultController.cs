@@ -52,18 +52,19 @@ public class ResultController : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	// Holistisk er altid 100% og i bagrunden, ændre analytik til og fylde de % den skal
 	public void setHAImage(float analytikFloat){
 
 		analytikImage.fillAmount = analytikFloat;
 	}
-
+	//Visuel er altid 100% og i bagrunden, ændre de 3 andre til at fylde de % de skal
 	public void setVATKImage(float auditivFloat, float taktilFloat, float kineastetiskFloat){
 		auditivImage.fillAmount = kineastetiskFloat + taktilFloat + auditivFloat;
 		taktilImage.fillAmount = kineastetiskFloat + taktilFloat;
 		kineastetiskImage.fillAmount = kineastetiskFloat;
 	}
 
+	// sætter diagramerne i toppen, til falsk og true, da ellers ville ListItem ikke virke, kan måske slettes når ListItem er ændret.
 	public void onHeadlineClick(){
 		if (foldout == false) {
 			setImagesToTrue ();
