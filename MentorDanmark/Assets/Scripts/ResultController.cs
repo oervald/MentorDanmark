@@ -34,24 +34,34 @@ public class ResultController : MonoBehaviour {
 	public Text kineastetiskHeadline;
 	public Text kineastetiskText;
 	public Text buttomText;
-	public Text envirLight;
-	public Text envirSound;
-	public Text envirTemp;
-	public Text envirConfert;
-	public Text envirMovment;
+	public Text envir;
 
 	bool foldout = false;
+	private string holistisk; 
+	private string analytisk;
+	private string visuel; 
+	private string auditiv;
+	private string taktil; 
+	private string kineatetisk; 
+
 
 	// Use this for initialization
 	void Start () {
 		setImagesToFalse ();
-		DanishStrings danishStrings = new DanishStrings ();
+		SetupPage ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+	public void SetupPage(){
+		DanishStrings ds = new DanishStrings ();
+		SubTitleTitel.text = ds.SubTitleResult;
+		SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
+	}
+
 	// Holistisk er altid 100% og i bagrunden, ændre analytik til og fylde de % den skal
 	public void setHAImage(float analytikFloat){
 
@@ -93,5 +103,33 @@ public class ResultController : MonoBehaviour {
 		kineastetiskImage.gameObject.SetActive (true);
 	}
 
+ public void setPrimaryThinkingStyle(){
+
+		float holistisk = 0f; 
+		float analystisk = 0f; 
+
+		if (holistisk > analystisk) {
+
+			// set holistisk primary 
+
+		}
+			else if (holistisk == analystisk){
+
+				// sætter begge to primary 
+			}
+				else {
+
+					// analytisk 
+
+				}
+}
+
+	public void setLearningPreferences(){
+
+		
+
+
+
+	}
 
 }

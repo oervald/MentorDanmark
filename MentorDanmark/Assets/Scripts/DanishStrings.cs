@@ -4,55 +4,13 @@ using System.Collections;
 //indholder stings til dansk text til appen.
 
 public class DanishStrings : MonoBehaviour {
-	
-	private string subTitleResult; 
-	private string subTitleThinkingStyle; 
-	private string subTitlePreferences;
-	private string subTitleEnvironment;
-	private string subTitleEnvirDescript; 
-
-	private string titleAnalyst1;
-	private string titleAnalyst2Part1;
-	private string titleAnalyst2Part2;
-	private string descpriptionAnalyst; 
-
-	private string titleHolistic1; 
-	private string titleHolistic2Part1;
-	private string titleHolistic2Part2;
-	private string descpriptionHolistic; 
-
-	
-	private string titleVisual1; 
-	private string titleVisual2Part1; 
-	private string titleVisual2Part2; 
-	private string descpriptionVisual; 
-
-	
-	private string titleAuditory1; 
-	private string titleAuditory2Part1;
-	private string titleAuditory2Part2;
-	private string descpriptionAuditory; 
-
-
-	private string titleTactile1; 
-	private string titleTactile2Part1;
-	private string titleTactile2Part2;
-	private string descpriptionTactile; 
-
-	private string titleKinesthetic1;
-	private string titleKinesthetic2Part1; 
-	private string titleKinesthetic2Part2;
-	private string descpriptionKinesthetic; 
-
-	private string btnTxtTagTest; 
-	private string btnTxtTagOm; 
 
 	public DanishStrings (){
 	}
 
-	string SubTitleResult {get {return "Læringsstilstest Resultater";}}
+	public string SubTitleResult {get {return "Læringsstilstest Resultater";}}
 	
-	string SubTitleThinkingStyle {get {return "Tænkestil";}}
+	public string SubTitleThinkingStyle {get {return "Tænkestil";}}
 	
 	string SubTitlePreferences {get {return "Læringspræferencer";}}
 	
@@ -127,17 +85,9 @@ public class DanishStrings : MonoBehaviour {
 	string DescpriptionKinesthetic {get {return  "Som kinæstiker, er det vigtigt, at have mulighed for at bruge sin krop, mens du lærer. Det er derfor vigtigt, at der er gode udfoldelsesmuligheder, der hvor læringen skal finde sted. Det er godt for dig at lave eksperimenter, bygge og modellere. Det er også en god idé at du benytter dig af drama og rollespil. Når der skal tages noter eller laves illustrationer, skal det gerne gøres i store formater.Det er derfor vigtigt, at du som kinæstetiker, gør brug af:-	Walk’n’talk, mens du arbejder-	At lave illustrationer eller modeller i stor skala af det, du lærer-	At stå op, mens du arbejder-	Fysiske aktiviteter, e.g. værkstedsarbejde eller eksperimenter ";}}
 
 
-	string BtnTxtTagTest {get {return this.btnTxtTagTest;}}
+	string BtnTxtTagTest {get {return "Tag test";}}
 
-	string BtnTxtTagOm {get {return this.btnTxtTagOm;}}
-
-
-	public override string ToString ()
-	{
-		return string.Format ("[DanishStrings: SubTitleResult={0}, SubTitleThinkingStyle={1}, SubTitlePreferences={2}, SubTitleEnvironment={3}, subTitleEnvirDescript={4}, TitleAnalyst={5}, TitleAnalyst2Part1={6}, TitleAnalyst2Part2={7}, DescpriptionAnalyst={8}, TitleHolistic1={9}, TitleHolistic2Part1={10}, TitleHolistic2Part2={11}, DescpriptionHolistic={12}, TitleVisual1={13}, TitleVisual2Part1={14}, TitleVisual2Part2={15}, DescpriptionVisual={16}, TitleAuditory1={17}, TitleAuditory2Part1={18}, TitleAuditory2Part2={19}, DescpriptionAuditory={20}, TitleTactile1={21}, TitleTactile2Part1={22}, TitleTactile2Part2={23}, DescpriptionTactile={24}, TitleKinesthetic1={25}, TitleKinesthetic2Part1={26}, TitleKinesthetic2Part2={27}, DescpriptionKinesthetic={28}, BtnTxtTagTest={29}, BtnTxtTagOm={30}]", SubTitleResult, SubTitleThinkingStyle, SubTitlePreferences, SubTitleEnvironment, subTitleEnvirDescript, TitleAnalyst, TitleAnalyst2Part1, TitleAnalyst2Part2, DescpriptionAnalyst, TitleHolistic1, TitleHolistic2Part1, TitleHolistic2Part2, DescpriptionHolistic, TitleVisual1, TitleVisual2Part1, TitleVisual2Part2, DescpriptionVisual, TitleAuditory1, TitleAuditory2Part1, TitleAuditory2Part2, DescpriptionAuditory, TitleTactile1, TitleTactile2Part1, TitleTactile2Part2, DescpriptionTactile, TitleKinesthetic1, TitleKinesthetic2Part1, TitleKinesthetic2Part2, DescpriptionKinesthetic, BtnTxtTagTest, BtnTxtTagOm);
-	}
-	
-
+	string BtnTxtTagOm {get {return "Tag test om";}}
 
 }
 
