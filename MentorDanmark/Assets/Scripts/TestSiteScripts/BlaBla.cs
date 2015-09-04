@@ -11,28 +11,34 @@ public class BlaBla : MonoBehaviour {
 	private WWW www;
 	// Use this for initialization
 	
-	void Start() {
-		print ("Hello");
+	IEnumerator Start() {
+
 
 		serverFunction = "GetQuizOptions";
 		www = new WWW (baseUrl+serverFunction, null,CreateHeader());
-		StartCoroutine (WaitForRequest ());
-		print (data);
-		
-		QuizzOptionHandler qph = gameObject.GetComponent<QuizzOptionHandler> ();
-		qph.ParseJson (data);
+	//	StartCoroutine (WaitForRequest (www));
+		yield return www;
+		data = www.text;
+
+		QuizzOptionHandler qh = gameObject.GetComponent<QuizzOptionHandler> ();
+		print ("Data == "  + data);
+		JSONObject jo = new JSONObject (data);
+		qh.ParseJson (jo);
+
 	}
 	
 	void Update(){
 
 	}
 
-	public IEnumerator WaitForRequest ()
+
+	public IEnumerator WaitForRequest (WWW www)
 	{
+
 		print ("Waiting for www");
 		yield return www;
 		data = www.text;
-	
+		print ("This is www.text =  "  + www.text);
 	}
 	
 	public static Dictionary<string, string> CreateHeader(){
