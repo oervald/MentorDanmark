@@ -49,6 +49,7 @@
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\ChangePangeScript.cs" />
+     <Compile Include="Assets\Scripts\ChangeSceen.cs" />
      <Compile Include="Assets\Scripts\DanishStrings.cs" />
      <Compile Include="Assets\Scripts\JSON\JSONObject.cs" />
      <Compile Include="Assets\Scripts\JSON\JSONTemplates.cs" />

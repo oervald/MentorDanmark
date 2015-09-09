@@ -14,7 +14,6 @@ public class ResultController : MonoBehaviour {
 	[Header("Images")]
 	public Image holistiskImage;
 	public Image analytikImage;
-
 	public Image visuelImage;
 	public Image auditivImage;
 	public Image taktilImage;
