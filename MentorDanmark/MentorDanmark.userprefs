@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ChangeSceen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultController.cs">
     <Files>
       <File FileName="Assets\Scripts\ResultController.cs" Line="61" Column="57" />
-      <File FileName="Assets\Scripts\ChangeSceen.cs" Line="21" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

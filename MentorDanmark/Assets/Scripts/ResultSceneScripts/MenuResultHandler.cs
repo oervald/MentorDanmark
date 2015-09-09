@@ -43,11 +43,19 @@ public class MenuResultHandler : MonoBehaviour {
 			resultModels.Add(rm);
 		}
 
-		foreach (ResultModel r in resultModels) {
+	
+	}
+
+	public void print(){
+
+		ResultCalculator resCal = new ResultCalculator ();
+		
+		List<ResultObject> resObject = resCal.print (resultModels); 
+		
+		
+		foreach (ResultObject r in resObject) {
 			print (r);
-			foreach (QuizOptionModel qm in r.Options) {
-				print (qm);
-			}
+			
 		}
 	}
 }

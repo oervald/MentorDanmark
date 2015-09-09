@@ -55,13 +55,15 @@
      <Compile Include="Assets\Scripts\JSON\JSONTemplates.cs" />
      <Compile Include="Assets\Scripts\JSON\VectorTemplates.cs" />
      <Compile Include="Assets\Scripts\ListItem\ListItem.cs" />
+     <Compile Include="Assets\Scripts\ListItem\ListItem2.cs" />
+     <Compile Include="Assets\Scripts\ListItem\ListItem3.cs" />
      <Compile Include="Assets\Scripts\ListItem\ListItemStudent.cs" />
      <Compile Include="Assets\Scripts\Norwegian.cs" />
      <Compile Include="Assets\Scripts\ResultController.cs" />
-     <Compile Include="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultModel.cs" />
+     <Compile Include="Assets\Scripts\ResultSceneScripts\ResultObject.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\BlaBla.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\LoadQuizOptions.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\QuizOptionModel.cs" />

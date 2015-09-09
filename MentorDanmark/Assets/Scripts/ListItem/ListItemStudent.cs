@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ListItemStudent : ListItem {
+public class ListItemStudent : ListItem2 {
 
 	[Header("Student")]
 	public GameObject viewPanel;
