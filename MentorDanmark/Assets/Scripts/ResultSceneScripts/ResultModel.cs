@@ -9,6 +9,7 @@ public class ResultModel{
 
 	//Empty constructor for instantiation without known variables
 	public ResultModel(){
+		options = new List<QuizOptionModel> ();
 	}
 	public ResultModel (int userID, string userType, List<QuizOptionModel> options)
 		{

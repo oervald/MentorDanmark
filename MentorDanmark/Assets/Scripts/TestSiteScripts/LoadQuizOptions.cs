@@ -159,8 +159,8 @@ public class LoadQuizOptions : MonoBehaviour {
 				AllAnswers[i][x].text = options[i].Options[x].Title;
 			}
 		}
-
-
-
+		GameObject go = GameObject.Find ("ScriptObject");
+		POSTAnswersController poa = go.GetComponent<POSTAnswersController> (); 
+		poa.options = options;
 	}
 }
