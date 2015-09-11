@@ -59,6 +59,21 @@ public class ResultController : MonoBehaviour {
 		DanishStrings ds = new DanishStrings ();
 		SubTitleTitel.text = ds.SubTitleResult;
 		SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
+		analytikHeadline.text = ds.TitleAnalyst; 
+		analytikText.text = ds.DescpriptionAnalyst; 
+		holistiskHeadline.text = ds.TitleHolistic1; 
+		holistiskText.text = ds.DescpriptionHolistic; 
+		SubTitlePreferences.text = ds.SubTitlePreferences; 
+		visuelHeadline.text = ds.TitleVisual1; 
+		visuelText.text = ds.DescpriptionVisual; 
+		auditivHeadline.text = ds.TitleAuditory1; 
+		auditivText.text = ds.DescpriptionAuditory; 
+		taktilHeadline.text = ds.TitleTactile1; 
+		taktilText.text = ds.DescpriptionTactile; 
+		kineastetiskHeadline.text = ds.TitleKinesthetic1; 
+		kineastetiskText.text = ds.DescpriptionKinesthetic; 
+		SubTitleEnvironment.text = ds.SubTitleEnvironment;
+
 	}
 
 	// Holistisk er altid 100% og i bagrunden, ændre analytik til og fylde de % den skal

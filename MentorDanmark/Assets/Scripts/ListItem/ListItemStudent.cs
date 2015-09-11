@@ -9,13 +9,13 @@ public class ListItemStudent : ListItem2 {
 	public GameObject viewPanel;
 
 	// Use this for initialization
-	void Start () {
+	public override void Start () {
 		base.Start();
 		HeadlineClicked ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public override void Update () {
 		base.Update ();
 	}
 
