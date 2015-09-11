@@ -1,19 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TestSiteScripts\POSTAnswersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs">
     <Files>
-      <File FileName="Assets\Scripts\TestSiteScripts\POSTAnswersController.cs" Line="8" Column="25" />
-      <File FileName="Assets\Scripts\TestSiteScripts\POSTFacade.cs" Line="40" Column="42" />
-      <File FileName="Assets\Scripts\TestSiteScripts\BlaBla.cs" Line="14" Column="7" />
+      <File FileName="Assets\Scripts\ResultController.cs" Line="50" Column="37" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" Line="51" Column="74" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" Line="21" Column="15" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" Line="28" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\POSTAnswersController.cs" line="67" />
-      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\POSTAnswersController.cs" line="75" />
-      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\POSTAnswersController.cs" line="79" />
-      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\TestSiteScripts\POSTAnswersController.cs" line="81" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

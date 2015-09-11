@@ -46,7 +46,7 @@ public class DanishStrings : MonoBehaviour {
 	
 	string TitleHolistic2Part2 {get {return "holist";}}
 	
-	public string DescpriptionHolistic {get {return "Som holist lærer du bedst, når du har overblik over opgaven som helhed, og når du kan se et klart formål med den.Det er vigtigt, at du får indflydelse på arbejdsformen og dermed kan skabe egen struktur – som ikke nødvendigvis altid er logisk for andre.  Du har brug for pauser fra arbejdet, hvor du taler om noget andet eller går i gang med nye opgaver.                Du behøver ikke færdiggøre opgaven, før du starter på en ny. Det er også vigtigt, at der er en god og hyggelig atmosfære omkring dig i læringssituationen.Som holist skal du derfor sørge for at:-	Relatere opgaven til virkeligheden-	Give dig tid til at undersøge hele opgaven/stoffet-	Variere opgaverne. Du må gerne arbejde med flere på én gang-	Følge din intuition";}}
+	public string DescpriptionHolistic {get {return "Som holist lærer du bedst, når du har overblik over opgaven som helhed, og når du kan se et klart formål med den.Det er vigtigt, at du får indflydelse på arbejdsformen og dermed kan skabe egen struktur – som ikke nødvendigvis altid er logisk for andre.  Du har brug for pauser fra arbejdet, hvor du taler om noget andet eller går i gang med nye opgaver. Du behøver ikke færdiggøre opgaven, før du starter på en ny. Det er også vigtigt, at der er en god og hyggelig atmosfære omkring dig i læringssituationen.Som holist skal du derfor sørge for at:\n-Relatere opgaven til virkeligheden-	Give dig tid til at undersøge hele opgaven/stoffet-	Variere opgaverne. Du må gerne arbejde med flere på én gang-	Følge din intuition";}}
 	
 	
 	public string TitleVisual1 {get {	return " Du er primært visuel";}}
@@ -55,7 +55,7 @@ public class DanishStrings : MonoBehaviour {
 	
 	string TitleVisual2Part2 {get {return "visuel";}}
 	
-	public string DescpriptionVisual {get {return "Når du lærer bedst visuelt, skal indholdet vises. Det kan enten gøres via skriftlige instruktioner, tekstbøger og billeder.Når noget nyt og vanskeligt skal læres, har du som visuel brug for at skrive eller tegne noter.Det er derfor vigtigt, at du som visuel, gør brug af:-	Trykte billeder og tekster-	Grafer og illustrationer-	Noter, mens du lærer-	Indre billeder, mens du lærer";}}
+	public string DescpriptionVisual {get {return "Når du lærer bedst visuelt, skal indholdet vises. Det kan enten gøres via skriftlige instruktioner, tekstbøger og billeder.Når noget nyt og vanskeligt skal læres, har du som visuel brug for at skrive eller tegne noter.Det er derfor vigtigt, at du som visuel, gør brug af:-	Trykte billeder og tekster \n-	Grafer og illustrationer\n-	Noter, mens du lærer\n-	Indre billeder, mens du lærer";}}
 	
 	
 	public string TitleAuditory1 {get {return "Du er primært auditiv";}}

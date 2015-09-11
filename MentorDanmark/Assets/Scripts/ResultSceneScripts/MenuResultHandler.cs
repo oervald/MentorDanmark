@@ -42,20 +42,17 @@ public class MenuResultHandler : MonoBehaviour {
 			rm.Options = options;
 			resultModels.Add(rm);
 		}
-
+		go();
 	
 	}
 
-	public void print(){
+	public void go(){
 
-		ResultCalculator resCal = new ResultCalculator ();
+		ResultCalculator resCal = gameObject.GetComponent<ResultCalculator> ();
 		
-		List<ResultObject> resObject = resCal.print (resultModels); 
+		 resCal.CalculateResult (resultModels); 
 		
 		
-		foreach (ResultObject r in resObject) {
-			print (r);
-			
-		}
+
 	}
 }

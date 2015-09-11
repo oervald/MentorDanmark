@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 public class MenuResultFacade : MonoBehaviour {
 	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
@@ -10,10 +11,16 @@ public class MenuResultFacade : MonoBehaviour {
 	// Use this for initialization
 	
 	void Start() {
+		print ("Running start in Facade");
 		string serverFunction = "GetQuizResultOptions";
-		www = new WWW (baseUrl+serverFunction, null,CreateHeader());
+		JSONObject json = new JSONObject ();
+		json.AddField ("UserID", 644);
+		json.AddField ("UserType", "Teacher");
+		string temp = json.Print ();
+		byte [] form = Encoding.ASCII.GetBytes(temp);
+		www = new WWW (baseUrl+serverFunction,form ,CreateHeader());
 		callMethod = serverFunction;
-	
+		StartCoroutine (WaitForRequest (www));
 		
 	}
 	
@@ -25,7 +32,7 @@ public class MenuResultFacade : MonoBehaviour {
 	private IEnumerator WaitForRequest (WWW www)
 	{
 		yield return www;
-		
+		print ("Request back");
 		// If succes -> Pass the data to Controller
 		if (www.error == null) {
 			Debug.Log (www.text);

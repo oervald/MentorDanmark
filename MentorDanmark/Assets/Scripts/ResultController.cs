@@ -43,11 +43,13 @@ public class ResultController : MonoBehaviour {
 	private string taktil; 
 	private string kineatetisk; 
 
+	public ResultObject resultobjec;
 
 	// Use this for initialization
 	void Start () {
+		resultobjec = new ResultObject ();
 		setImagesToFalse ();
-		SetupPage ();
+
 	}
 	
 	// Update is called once per frame
@@ -59,9 +61,9 @@ public class ResultController : MonoBehaviour {
 		DanishStrings ds = new DanishStrings ();
 		SubTitleTitel.text = ds.SubTitleResult;
 		SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
-		analytikHeadline.text = ds.TitleAnalyst; 
+		analytikHeadline.text = ds.TitleAnalyst + resultobjec.Analystisk + "%" ; 
 		analytikText.text = ds.DescpriptionAnalyst; 
-		holistiskHeadline.text = ds.TitleHolistic1; 
+		holistiskHeadline.text = ds.TitleHolistic1 + resultobjec.Holistisk + "%"; 
 		holistiskText.text = ds.DescpriptionHolistic; 
 		SubTitlePreferences.text = ds.SubTitlePreferences; 
 		visuelHeadline.text = ds.TitleVisual1; 
