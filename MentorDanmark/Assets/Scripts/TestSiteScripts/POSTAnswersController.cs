@@ -36,17 +36,33 @@ public class POSTAnswersController : MonoBehaviour {
 		toggles.Add(auditivPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(taktilPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(kiaestestiskPanel.GetComponentsInChildren<Toggle> ());
-		toggles.Add(lysPanel.GetComponentsInChildren<Toggle> ());
-		toggles.Add(lydPanel.GetComponentsInChildren<Toggle> ());
-		toggles.Add(temperaturPanel.GetComponentsInChildren<Toggle> ());
-		toggles.Add(designPanel.GetComponentsInChildren<Toggle> ());
-		toggles.Add( bevaegelsePanel.GetComponentsInChildren<Toggle> ());
+		toggles.Add(removeNotNeededToggles( lysPanel.GetComponentsInChildren<Toggle> ()));
+		toggles.Add(removeNotNeededToggles( lydPanel.GetComponentsInChildren<Toggle> ()));
+		toggles.Add(removeNotNeededToggles( temperaturPanel.GetComponentsInChildren<Toggle> ()));
+		toggles.Add (removeNotNeededToggles ( designPanel.GetComponentsInChildren<Toggle> ()));
+		toggles.Add(removeNotNeededToggles( bevaegelsePanel.GetComponentsInChildren<Toggle> ()));
 
 
 	
 
 		options = new List<QuizPartModel> ();
 
+	}
+
+	public Toggle[] removeNotNeededToggles( Toggle[] tempToggles){
+		List<Toggle> teemo = new List<Toggle> ();
+
+		Toggle[] returnToggles = new Toggle[2];
+		foreach (Toggle t in tempToggles) {
+			teemo.Add(t);
+		}
+		int p = teemo.Count - 1;
+		print (p);
+		teemo.RemoveAt (p);
+		for (int i = 0; i<teemo.Count; i++) {
+			returnToggles[i] = teemo[i];
+		}
+		return returnToggles;
 	}
 	
 	// Update is called once per frame

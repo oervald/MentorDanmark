@@ -16,9 +16,10 @@ public class ResultCalculator : MonoBehaviour {
 
 	public void CalculateResult(List<ResultModel> resModels){
 		List<ResultObject> resultModels = new List<ResultObject> ();
-		ResultObject robj = new ResultObject (); 
+		ResultObject robj = new ResultObject();
 		foreach (ResultModel rm in resModels) {
-			print (rm);
+			robj=	new ResultObject (); 
+			print (rm.Options.Count);
 			if (rm.Options.Count != 0) {
 				
 				double ht = 0; 
@@ -32,13 +33,15 @@ public class ResultCalculator : MonoBehaviour {
 					
 					if (rm.Options [i].Selected == true) {
 						ht++;
+						print ("ht" + ht);
 					}
 				}
 				
 				for (int x = 6; x<=12; x++) {
 					
 					if (rm.Options [x].Selected == true) {
-						at++; 		
+						at++; 	
+						print ("at" + at);
 					}
 				}
 				
@@ -51,7 +54,8 @@ public class ResultCalculator : MonoBehaviour {
 				for (int j = 13; j<=19; j++) {
 					
 					if (rm.Options [j].Selected == true) {
-						vt++; 		
+						vt++; 	
+						print ("vt" + vt);
 					}
 				}
 				
@@ -59,6 +63,7 @@ public class ResultCalculator : MonoBehaviour {
 					
 					if (rm.Options [g].Selected == true) {
 						adt++; 
+						print ("adt" + adt);
 					}
 				}
 				
@@ -66,12 +71,14 @@ public class ResultCalculator : MonoBehaviour {
 					
 					if (rm.Options [h].Selected == true) {
 						takt++; 
+						print ("takt" + takt);
 					}
 				}
 				for (int k = 34; k< 41; k++) {
-					
+
 					if (rm.Options [k].Selected == true) {
 						knaest++; 
+						print ("knaest" + knaest);
 					}
 				}
 				
@@ -88,7 +95,7 @@ public class ResultCalculator : MonoBehaviour {
 		
 		GameObject go = GameObject.Find ("ListItemStudent Space");
 		ResultController rc = go.GetComponent<ResultController> ();
-		rc.resultobjec = robj;
+		rc.resultobjec = resultModels[0];
 		Debug.Log("I might be empty" + robj.ToString());
 		rc.SetupPage ();
 	}
