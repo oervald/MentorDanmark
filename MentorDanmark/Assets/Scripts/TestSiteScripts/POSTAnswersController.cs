@@ -43,7 +43,7 @@ public class POSTAnswersController : MonoBehaviour {
 		toggles.Add( bevaegelsePanel.GetComponentsInChildren<Toggle> ());
 
 
-
+	
 
 		options = new List<QuizPartModel> ();
 
@@ -59,7 +59,7 @@ public class POSTAnswersController : MonoBehaviour {
 		if (options != null) {
 			print(options);
 		}
-		try{
+
 		ResultModel rm = new ResultModel ();
 		rm.UserID = PlayerPrefs.GetInt ("UserID");
 		rm.UserType = PlayerPrefs.GetString ("UserType");
@@ -86,9 +86,10 @@ public class POSTAnswersController : MonoBehaviour {
 	}
 
 			POSTResultCalculator cal = gameObject.GetComponent<POSTResultCalculator>();
+
 			cal.ParseToJsonResult(rm);
-		}finally{
-		Application.LoadLevel ("ResultScene");
+	
+		
 		}
-}
+
 }

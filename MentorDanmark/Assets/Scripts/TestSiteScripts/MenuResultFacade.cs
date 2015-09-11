@@ -3,27 +3,50 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MenuResultFacade : MonoBehaviour {
-	string baseUrl = "Test.api.mentoreurope.eu/Quiz/";
+	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
 	string callMethod;
 	string data;
 	WWW www;
 	// Use this for initialization
 	
-	IEnumerator Start() {
+	void Start() {
 		string serverFunction = "GetQuizResultOptions";
 		www = new WWW (baseUrl+serverFunction, null,CreateHeader());
-		yield return www;
-		data = www.text;
-		MenuResultHandler qh = gameObject.GetComponent<MenuResultHandler> ();
-		print ("Data == "  + data);
-		JSONObject jo = new JSONObject (data);
-		qh.ParseJson (jo);
+		callMethod = serverFunction;
+	
 		
 	}
 	
 	void Update(){
 		
 	}
+
+
+	private IEnumerator WaitForRequest (WWW www)
+	{
+		yield return www;
+		
+		// If succes -> Pass the data to Controller
+		if (www.error == null) {
+			Debug.Log (www.text);
+			if(callMethod == "GetQuizResultOptions")
+			{
+				data = www.text;
+				MenuResultHandler qh = gameObject.GetComponent<MenuResultHandler> ();
+				print ("Data == "  + data);
+				JSONObject jo = new JSONObject (data);
+				qh.ParseJson (jo);
+				
+			}
+
+		} 
+		// If errors -> Log them 
+		else {
+			Debug.Log ("WWW Error: " + www.error);
+			print (www.text);
+		}    
+	}
+
 	
 	
 	public static Dictionary<string, string> CreateHeader(){

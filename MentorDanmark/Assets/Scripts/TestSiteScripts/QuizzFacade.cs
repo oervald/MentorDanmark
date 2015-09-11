@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class QuizFacade : MonoBehaviour {
 
-	string baseUrl = "Test.api.mentoreurope.eu/Quiz/";
+	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
 	string serverFunction;
 	string callMethod;
 	// Use this for initialization

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 public class POSTFacade : MonoBehaviour {
-	string baseUrl = "Test.api.mentoreurope.eu/Quiz/";
+	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
 	string callMethod;
 	WWW www;
 	// Use this for initialization
@@ -26,16 +26,7 @@ public class POSTFacade : MonoBehaviour {
 		return www;
 
 	}
-	public IEnumerator POSTQuizAnswers(WWW www){
-			
-		yield return www;
-		print ("I'm back");
-		string data = www.data;
-		print (data);
-		print (www.text);
 
-
-	}
 	private IEnumerator WaitForRequest (WWW www)
 	{
 		yield return www;
@@ -46,6 +37,7 @@ public class POSTFacade : MonoBehaviour {
 			if(callMethod == "POSTAnswers")
 			{
 				print ("Answers Saved!");
+				Application.LoadLevel("MentorScene");
 			
 			}
 			if(callMethod == "PostTrial")

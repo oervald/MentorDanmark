@@ -4,26 +4,22 @@ using System.Collections.Generic;
 
 public class BlaBla : MonoBehaviour {
 
-	string baseUrl = "Test.api.mentoreurope.eu/Quiz/";
+	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
 	string serverFunction;
 	string callMethod;
 	string data;
 	private WWW www;
 	// Use this for initialization
 	
-	IEnumerator Start() {
+	void Start() {
 
 
 		serverFunction = "GetQuizOptions";
+		callMethod = serverFunction;
 		www = new WWW (baseUrl+serverFunction, null,CreateHeader());
-	//	StartCoroutine (WaitForRequest (www));
-		yield return www;
-		data = www.text;
+		StartCoroutine (WaitForRequest (www));
 
-		QuizzOptionHandler qh = gameObject.GetComponent<QuizzOptionHandler> ();
-		print ("Data == "  + data);
-		JSONObject jo = new JSONObject (data);
-		qh.ParseJson (jo);
+	
 
 	}
 	
@@ -32,13 +28,28 @@ public class BlaBla : MonoBehaviour {
 	}
 
 
-	public IEnumerator WaitForRequest (WWW www)
+	private IEnumerator WaitForRequest (WWW www)
 	{
-
-		print ("Waiting for www");
 		yield return www;
-		data = www.text;
-		print ("This is www.text =  "  + www.text);
+		
+		// If succes -> Pass the data to Controller
+		if (www.error == null) {
+			Debug.Log (www.text);
+			if (callMethod == "GetQuizOptions") {
+				data = www.text;
+				
+				QuizzOptionHandler qh = gameObject.GetComponent<QuizzOptionHandler> ();
+				print ("Data == " + data);
+				JSONObject jo = new JSONObject (data);
+				qh.ParseJson (jo);
+		
+			} 
+		// If errors -> Log them 
+		else {
+				Debug.Log ("WWW Error: " + www.error);
+				print (www.text);
+			}    
+		}
 	}
 	
 	public static Dictionary<string, string> CreateHeader(){
