@@ -44,7 +44,7 @@ public class ResultCalculator : MonoBehaviour {
 				
 				double total = at + ht;
 				
-				robj.Holistisk = (at / total) * 100;
+				robj.Holistisk = (ht / total) * 100;
 				robj.Analystisk = (at / total) * 100; 
 				
 				

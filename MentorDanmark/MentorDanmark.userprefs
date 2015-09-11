@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultController.cs">
     <Files>
-      <File FileName="Assets\Scripts\ResultController.cs" Line="50" Column="37" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" Line="51" Column="74" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResultController.cs" Line="75" Column="57" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ResultSceneScripts\ResultObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" Line="21" Column="15" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" Line="28" Column="3" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
