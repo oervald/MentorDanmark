@@ -6,6 +6,19 @@ using UnityEngine.UI;
 public class POSTAnswersController : MonoBehaviour {
 
 	List<Toggle[]> toggles;
+	public Toggle lys1;
+	public Toggle lys2;
+
+	public Toggle lyd1;
+	public Toggle lyd2;
+
+	public Toggle temp1;
+	public Toggle temp2;
+
+	public Toggle des1;
+	public Toggle des2;
+
+	public Toggle bev1;
 
 	public List<QuizPartModel> options;
 
@@ -16,11 +29,7 @@ public class POSTAnswersController : MonoBehaviour {
 	public RectTransform auditivPanel;
 	public RectTransform taktilPanel;
 	public RectTransform kiaestestiskPanel;
-	public RectTransform lysPanel;
-	public RectTransform lydPanel;
-	public RectTransform temperaturPanel;
-	public RectTransform designPanel;
-	public RectTransform bevaegelsePanel;
+
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +37,11 @@ public class POSTAnswersController : MonoBehaviour {
 		PlayerPrefs.SetString ("UserType", "Teacher");
 		toggles = new List<Toggle[]> ();
 
+		Toggle[] lys = new Toggle[]{lys1,lys2};
+		Toggle[] lyd = new Toggle[]{lyd1,lyd2};
+		Toggle[] temp = new Toggle[]{temp1,temp2};
+		Toggle[] des = new Toggle[]{des1,des2};
+		Toggle[] bev = new Toggle[]{bev1};
 
 
 		toggles.Add(holistiskPanel.GetComponentsInChildren<Toggle> ());
@@ -36,11 +50,18 @@ public class POSTAnswersController : MonoBehaviour {
 		toggles.Add(auditivPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(taktilPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(kiaestestiskPanel.GetComponentsInChildren<Toggle> ());
-		toggles.Add(removeNotNeededToggles( lysPanel.GetComponentsInChildren<Toggle> ()));
-		toggles.Add(removeNotNeededToggles( lydPanel.GetComponentsInChildren<Toggle> ()));
-		toggles.Add(removeNotNeededToggles( temperaturPanel.GetComponentsInChildren<Toggle> ()));
-		toggles.Add (removeNotNeededToggles ( designPanel.GetComponentsInChildren<Toggle> ()));
-		toggles.Add(removeNotNeededToggles( bevaegelsePanel.GetComponentsInChildren<Toggle> ()));
+	
+		print(holistiskPanel.GetComponentsInChildren<Toggle> ().Length);
+		print(analytiskPanel.GetComponentsInChildren<Toggle> ().Length);
+		print(visuelPanel.GetComponentsInChildren<Toggle>().Length);
+		print(auditivPanel.GetComponentsInChildren<Toggle> ().Length);
+		print(taktilPanel.GetComponentsInChildren<Toggle> ().Length);
+		print(kiaestestiskPanel.GetComponentsInChildren<Toggle> ().Length);
+		toggles.Add(lys);
+		toggles.Add(lyd);
+		toggles.Add(temp);
+		toggles.Add (des);
+		toggles.Add(bev);
 
 
 	
@@ -87,25 +108,33 @@ public class POSTAnswersController : MonoBehaviour {
 				rm.Options.Add(qom);
 			}
 		}
-
+		print (rm.Options.Count);
+		print (toggles.Count);
+		int counter = 0;
 		for (int i=0; i<=toggles.Count-1; i++) {
-				int limit = toggles[i].Length-1;
+			print ("i : " + i);
+				int limit = toggles[i].Length;
 				for(int x =0; x<limit; x++){
-
+				print ("x : " + x);
 			if(toggles[i][x].isOn == true){
-				rm.Options[i].Selected = true;
-			}else{
-				rm.Options[i].Selected = false;
-			}
 
+				rm.Options[counter].Selected = true;
+					counter++;
+
+			}else if(toggles[i][x].isOn ==false){
+
+				rm.Options[counter].Selected = false;
+					counter++;
+				
 				}
-	}
+			}
+		}
 
 			POSTResultCalculator cal = gameObject.GetComponent<POSTResultCalculator>();
 
 			cal.ParseToJsonResult(rm);
 	
 		
-		}
+	}
 
 }
