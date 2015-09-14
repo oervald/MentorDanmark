@@ -11,14 +11,10 @@ public class MenuResultFacade : MonoBehaviour {
 	// Use this for initialization
 	
 	void Start() {
-		print ("Running start in Facade");
+
 		string serverFunction = "GetQuizResultOptions";
-		JSONObject json = new JSONObject ();
-		json.AddField ("UserID", 644);
-		json.AddField ("UserType", "Teacher");
-		string temp = json.Print ();
-		byte [] form = Encoding.ASCII.GetBytes(temp);
-		www = new WWW (baseUrl+serverFunction,form ,CreateHeader());
+	
+		www = new WWW (baseUrl+serverFunction,null ,CreateHeader());
 		callMethod = serverFunction;
 		StartCoroutine (WaitForRequest (www));
 		
@@ -29,10 +25,12 @@ public class MenuResultFacade : MonoBehaviour {
 	}
 
 
+
+
 	private IEnumerator WaitForRequest (WWW www)
 	{
 		yield return www;
-		print ("Request back");
+
 		// If succes -> Pass the data to Controller
 		if (www.error == null) {
 			Debug.Log (www.text);
@@ -40,7 +38,6 @@ public class MenuResultFacade : MonoBehaviour {
 			{
 				data = www.text;
 				MenuResultHandler qh = gameObject.GetComponent<MenuResultHandler> ();
-				print ("Data == "  + data);
 				JSONObject jo = new JSONObject (data);
 				qh.ParseJson (jo);
 				

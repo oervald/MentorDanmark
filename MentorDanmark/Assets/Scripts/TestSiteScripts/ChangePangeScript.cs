@@ -18,7 +18,10 @@ public class ChangePangeScript : MonoBehaviour {
 	private int pageNumber;
 	
 	ArrayList siteList;
-	
+	void OnShow(){
+		Holistisk.transform.SetAsLastSibling ();
+
+	}
 	// Use this for initialization
 	void Start () {
 		siteList = new ArrayList ();

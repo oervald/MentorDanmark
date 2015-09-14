@@ -19,7 +19,7 @@ public class POSTResultCalculator : MonoBehaviour {
 
 			json.AddField("UserID", resultModel.UserID);
 			json.AddField("UserType", resultModel.UserType);
-			print ((resultModel.UserType));
+	
 			JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
 			json.AddField("Answers",arr);
 			foreach(QuizOptionModel qm in resultModel.Options){
@@ -30,8 +30,7 @@ public class POSTResultCalculator : MonoBehaviour {
 			arr.Add(ans);
 			}
 
-		string endcoded = json.Print ();
-		print (endcoded);
+		print ("JSON going out " + json.Print());
 		POSTFacade facade = gameObject.GetComponent<POSTFacade> ();
 		facade.SaveQuizAnswers (json);
 	}

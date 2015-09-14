@@ -34,12 +34,12 @@ public class BlaBla : MonoBehaviour {
 		
 		// If succes -> Pass the data to Controller
 		if (www.error == null) {
-			Debug.Log (www.text);
+
 			if (callMethod == "GetQuizOptions") {
 				data = www.text;
 				
 				QuizzOptionHandler qh = gameObject.GetComponent<QuizzOptionHandler> ();
-				print ("Data == " + data);
+				print ("Data getQuizOption == " + data);
 				JSONObject jo = new JSONObject (data);
 				qh.ParseJson (jo);
 		

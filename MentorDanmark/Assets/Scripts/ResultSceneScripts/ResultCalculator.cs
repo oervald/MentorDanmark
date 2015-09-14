@@ -19,7 +19,7 @@ public class ResultCalculator : MonoBehaviour {
 		ResultObject robj = new ResultObject();
 		foreach (ResultModel rm in resModels) {
 			robj=	new ResultObject (); 
-			print (rm.Options.Count);
+		
 			if (rm.Options.Count != 0) {
 				
 				double ht = 0; 
@@ -33,55 +33,57 @@ public class ResultCalculator : MonoBehaviour {
 					
 					if (rm.Options [i].Selected == true) {
 						ht++;
-						print ("ht" + ht);
+
 					}
 				}
-				
-				for (int x = 6; x<=12; x++) {
+			
+				for (int x = 6; x<=11; x++) {
 					
 					if (rm.Options [x].Selected == true) {
 						at++; 	
-						print ("at" + at);
+
 					}
 				}
 				
 				double total = at + ht;
+				print ( "at" + at + "  ht" + ht);
 				
 				robj.Holistisk = (ht / total) * 100;
 				robj.Analystisk = (at / total) * 100; 
 				
 				
-				for (int j = 13; j<=19; j++) {
+				for (int j = 12; j<=17; j++) {
 					
 					if (rm.Options [j].Selected == true) {
 						vt++; 	
-						print ("vt" + vt);
+					
 					}
 				}
 				
-				for (int g = 20; g<= 26; g++) {
+				for (int g = 18; g<= 23; g++) {
 					
 					if (rm.Options [g].Selected == true) {
 						adt++; 
-						print ("adt" + adt);
+					
 					}
 				}
 				
-				for (int h = 27; h<= 33; h++) {
+				for (int h = 24; h<= 29; h++) {
 					
 					if (rm.Options [h].Selected == true) {
 						takt++; 
-						print ("takt" + takt);
+					
 					}
 				}
-				for (int k = 34; k< 41; k++) {
+				for (int k = 30; k<= 35; k++) {
 
 					if (rm.Options [k].Selected == true) {
 						knaest++; 
-						print ("knaest" + knaest);
+						print ("Kinæstetisk" + knaest);
+				
 					}
 				}
-				
+				print (vt +  "   " + adt + "   " + takt + "   " +knaest);
 				double totalPræf = vt + adt + takt + knaest; 
 				robj.Visuel = (vt / totalPræf) * 100; 
 				robj.Auditiv = (adt / totalPræf) * 100; 
@@ -100,7 +102,7 @@ public class ResultCalculator : MonoBehaviour {
 		
 		GameObject go = GameObject.Find ("ScriptObject");
 		ResultController rc = go.GetComponent<ResultController> ();
-		Debug.Log("I might be empty" + robj.ToString());
+	
 		rc.SetupPage (resultModels);
 	}
 }
