@@ -4,7 +4,8 @@ using System;
 	public class ResultObject
 	{
 
-
+	int userID;
+	String userType;
 	double holistisk; 
 	double analystisk; 
 	double  visuel; 
@@ -12,7 +13,7 @@ using System;
 	double  taktil; 
 	double  kinaestisk; 
 
-	public ResultObject (double  holistisk, double  analystisk,double visuel, double auditiv, double  taktil,double  kinaestisk)
+	public ResultObject (double  holistisk, double  analystisk,double visuel, double auditiv, double  taktil,double  kinaestisk, int userID, string userType)
 		{
 			this.holistisk = holistisk;
 			this.analystisk = analystisk;
@@ -20,6 +21,8 @@ using System;
 			this.auditiv = auditiv;
 			this.taktil = taktil;
 			this.kinaestisk = kinaestisk;
+		this.userID = userID;
+		this.userType = userType;
 		}
 
 	public ResultObject(){
@@ -76,6 +79,24 @@ using System;
 			}
 			set {
 				kinaestisk = value;
+			}
+		}
+
+	public	int UserID {
+			get {
+				return this.userID;
+			}
+			set {
+				userID = value;
+			}
+		}
+
+	public	string UserType {
+			get {
+				return this.userType;
+			}
+			set {
+				userType = value;
 			}
 		}
 

@@ -86,17 +86,21 @@ public class ResultCalculator : MonoBehaviour {
 				robj.Visuel = (vt / totalPræf) * 100; 
 				robj.Auditiv = (adt / totalPræf) * 100; 
 				robj.Taktil = (takt / totalPræf) * 100; 
-				robj.Kinaestisk = (knaest / totalPræf) * 100; 
+				robj.Kinaestisk = (knaest / totalPræf) * 100;
+				robj.UserID = rm.UserID;
+				robj.UserType = rm.UserType;
 				
-				resultModels.Add(robj);
+			
 				
 			}
+			robj.UserID = rm.UserID;
+			robj.UserType = rm.UserType;
+			resultModels.Add(robj);
 		}
 		
-		GameObject go = GameObject.Find ("ListItemStudent Space");
+		GameObject go = GameObject.Find ("ScriptObject");
 		ResultController rc = go.GetComponent<ResultController> ();
-		rc.resultobjec = resultModels[0];
 		Debug.Log("I might be empty" + robj.ToString());
-		rc.SetupPage ();
+		rc.SetupPage (resultModels);
 	}
 }

@@ -51,8 +51,5 @@ public class MenuResultHandler : MonoBehaviour {
 		ResultCalculator resCal = gameObject.GetComponent<ResultCalculator> ();
 		
 		 resCal.CalculateResult (resultModels); 
-		
-		
-
 	}
 }

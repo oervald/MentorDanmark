@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -33,8 +33,7 @@ public class POSTAnswersController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		PlayerPrefs.SetInt ("UserID", 664);
-		PlayerPrefs.SetString ("UserType", "Teacher");
+	
 		toggles = new List<Toggle[]> ();
 
 		Toggle[] lys = new Toggle[]{lys1,lys2};
@@ -101,10 +100,12 @@ public class POSTAnswersController : MonoBehaviour {
 		rm.UserID = PlayerPrefs.GetInt ("UserID");
 		rm.UserType = PlayerPrefs.GetString ("UserType");
 
+		print (rm.UserType);
+
 		foreach (QuizPartModel qpm in options) {
 				print(options.Count);
 			foreach(QuizOptionModel qom in qpm.Options){
-					print (qpm.Options.Count);
+					print ("Options count" + qpm.Options.Count);
 				rm.Options.Add(qom);
 			}
 		}

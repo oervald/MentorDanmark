@@ -8,10 +8,48 @@ public class ListItemStudent : ListItem2 {
 	[Header("Student")]
 	public GameObject viewPanel;
 
+	[Header("Headlines")]
+	public Text SubTitleTitel;
+	public Text SubTitleThinkingStyle;
+	public Text SubTitlePreferences;
+	public Text SubTitleEnvironment;
+	
+	[Header("Images")]
+	public Image holistiskImage;
+	public Image analytikImage;
+	public Image visuelImage;
+	public Image auditivImage;
+	public Image taktilImage;
+	public Image kineastetiskImage;
+	
+	[Header("Text")]
+	public Text holistiskHeadline;
+	public Text holistiskText;
+	public Text analytikHeadline;
+	public Text analytikText;
+	public Text visuelHeadline;
+	public Text visuelText;
+	public Text auditivHeadline;
+	public Text auditivText;
+	public Text taktilHeadline;
+	public Text taktilText;
+	public Text kineastetiskHeadline;
+	public Text kineastetiskText;
+	public Text buttomText;
+	public Text envir;
+
+	bool tempFoldout = true;
+	private int valueUserID;
+	private string valueUserType;
+	//public ResultObject resultobjec;
+
 	// Use this for initialization
 	public override void Start () {
 		base.Start();
-		HeadlineClicked ();
+		onHeadlineClick ();
+		setImagesToFalse ();
+		valueUserID = 0;
+		valueUserType = "";
 	}
 	
 	// Update is called once per frame
@@ -19,12 +57,89 @@ public class ListItemStudent : ListItem2 {
 		base.Update ();
 	}
 
-	public void HeadlineClicked ()
-	{
-		if (viewPanel.activeSelf)
-			Fold ();
-		else
-			print (LayoutUtility.GetPreferredHeight (GetComponent<RectTransform> ()));
+	public void SetupPage(ResultObject resultobjec){
+		GameObject container = GameObject.Find("Container");
+		DanishStrings ds = new DanishStrings ();
+		// headline skal sættes dynamisk
+		valueUserID = resultobjec.UserID;
+		valueUserType = resultobjec.UserType;
+		headlineText.text = resultobjec.UserID.ToString() + "( " + resultobjec.UserType + ")";
+		SubTitleTitel.text = ds.SubTitleResult;
+		SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
+		analytikHeadline.text = ds.TitleAnalyst + " (" + resultobjec.Analystisk + "%)" ; 
+		analytikText.text = ds.DescpriptionAnalyst; 
+		holistiskHeadline.text = ds.TitleHolistic1 + " (" + resultobjec.Holistisk + "%)"; 
+		holistiskText.text = ds.DescpriptionHolistic; 
+		SubTitlePreferences.text = ds.SubTitlePreferences; 
+		visuelHeadline.text = ds.TitleVisual1 + " (" + resultobjec.Visuel + "%)"; 
+		visuelText.text = ds.DescpriptionVisual; 
+		auditivHeadline.text = ds.TitleAuditory1 + " (" + resultobjec.Auditiv + "%)"; 
+		auditivText.text = ds.DescpriptionAuditory; 
+		taktilHeadline.text = ds.TitleTactile1 + " (" + resultobjec.Taktil + "%)"; 
+		taktilText.text = ds.DescpriptionTactile; 
+		kineastetiskHeadline.text = ds.TitleKinesthetic1 + " (" + resultobjec.Kinaestisk + "%)"; 
+		kineastetiskText.text = ds.DescpriptionKinesthetic; 
+		SubTitleEnvironment.text = ds.SubTitleEnvironment;
+		//setHAImage ();
+		//setVATKImage ();
+		this.transform.SetParent (container.transform);
+		this.transform.localScale = new Vector3(1,1,1);
+		ResetHeight ();
 		
 	}
+
+	// sætter diagramerne i toppen, til falsk og true, da ellers ville ListItem ikke virke, kan måske slettes når ListItem er ændret.
+	public void onHeadlineClick(){
+		if (tempFoldout == false) {
+			setImagesToTrue ();
+			tempFoldout = true;
+			PlayerPrefs.SetInt("UserID", valueUserID);
+			PlayerPrefs.SetString("UserType", valueUserType);
+			Fold();
+		} else {
+			setImagesToFalse();
+			tempFoldout = false;
+			Fold();
+		}
+	}
+	
+	
+	public void setImagesToFalse(){
+		holistiskImage.gameObject.SetActive (false);
+		analytikImage.gameObject.SetActive (false);
+		visuelImage.gameObject.SetActive (false);
+		auditivImage.gameObject.SetActive (false);
+		taktilImage.gameObject.SetActive (false);
+		kineastetiskImage.gameObject.SetActive (false);
+	}
+	
+	public void setImagesToTrue(){
+		holistiskImage.gameObject.SetActive (true);
+		analytikImage.gameObject.SetActive (true);
+		visuelImage.gameObject.SetActive (true);
+		auditivImage.gameObject.SetActive (true);
+		taktilImage.gameObject.SetActive (true);
+		kineastetiskImage.gameObject.SetActive (true);
+	}
+
+	// Holistisk er altid 100% og i bagrunden, ændre analytik til og fylde de % den skal
+	/* public void setHAImage(){
+		float analytikFloat = float.Parse(resultobjec.Analystisk.ToString());
+		analytikFloat = analytikFloat / 100;
+		analytikImage.fillAmount = analytikFloat;
+	}
+
+	//Visuel er altid 100% og i bagrunden, ændre de 3 andre til at fylde de % de skal
+	 public void setVATKImage(){
+		float auditivFloat = float.Parse (resultobjec.Auditiv.ToString ());
+		auditivFloat = auditivFloat / 100;
+		float taktilFloat = float.Parse (resultobjec.Taktil.ToString());
+		taktilFloat = taktilFloat / 100;
+		float kineastetiskFloat = float.Parse(resultobjec.Kinaestisk.ToString());
+		kineastetiskFloat = kineastetiskFloat / 100;
+		auditivImage.fillAmount = kineastetiskFloat + taktilFloat + auditivFloat;
+		taktilImage.fillAmount = kineastetiskFloat + taktilFloat;
+		kineastetiskImage.fillAmount = kineastetiskFloat;
+	}
+	*/
 }
