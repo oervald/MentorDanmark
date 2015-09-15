@@ -46,40 +46,7 @@ public class Norwegian : MonoBehaviour {
 	private string btnTxtTagOm; 
 	
 	
-	public Norwegian (string subTitleResult, string subTitleThinkingStyle, string subTitlePreferences, string subTitleEnvironment, string subTitleEnvirDescript, string titleAnalyst1, string titleAnalyst2Part1, string titleAnalyst2Part2, string descpriptionAnalyst, string titleHolistic1, string titleHolistic2Part1, string titleHolistic2Part2, string descpriptionHolistic, string titleVisual1, string titleVisual2Part1, string titleVisual2Part2, string descpriptionVisual, string titleAuditory1, string titleAuditory2Part1, string titleAuditory2Part2, string descpriptionAuditory, string titleTactile1, string titleTactile2Part1, string titleTactile2Part2, string descpriptionTactile, string titleKinesthetic1, string titleKinesthetic2Part1, string titleKinesthetic2Part2, string descpriptionKinesthetic, string btnTxtTagTest, string btnTxtTagOm)
-	{
-		this.subTitleResult = subTitleResult;
-		this.subTitleThinkingStyle = subTitleThinkingStyle;
-		this.subTitlePreferences = subTitlePreferences;
-		this.subTitleEnvironment = subTitleEnvironment;
-		this.subTitleEnvirDescript = subTitleEnvirDescript; 
-		this.titleAnalyst1 = titleAnalyst1;
-		this.titleAnalyst2Part1 = titleAnalyst2Part1;
-		this.titleAnalyst2Part2 = titleAnalyst2Part2;
-		this.descpriptionAnalyst = descpriptionAnalyst;
-		this.titleHolistic1 = titleHolistic1;
-		this.titleHolistic2Part1 = titleHolistic2Part1;
-		this.titleHolistic2Part2 = titleHolistic2Part2;
-		this.descpriptionHolistic = descpriptionHolistic;
-		this.titleVisual1 = titleVisual1;
-		this.titleVisual2Part1 = titleVisual2Part1;
-		this.titleVisual2Part2 = titleVisual2Part2;
-		this.descpriptionVisual = descpriptionVisual;
-		this.titleAuditory1 = titleAuditory1;
-		this.titleAuditory2Part1 = titleAuditory2Part1;
-		this.titleAuditory2Part2 = titleAuditory2Part2;
-		this.descpriptionAuditory = descpriptionAuditory;
-		this.titleTactile1 = titleTactile1;
-		this.titleTactile2Part1 = titleTactile2Part1;
-		this.titleTactile2Part2 = titleTactile2Part2;
-		this.descpriptionTactile = descpriptionTactile;
-		this.titleKinesthetic1 = titleKinesthetic1;
-		this.titleKinesthetic2Part1 = titleKinesthetic2Part1;
-		this.titleKinesthetic2Part2 = titleKinesthetic2Part2;
-		this.descpriptionKinesthetic = descpriptionKinesthetic;
-		this.btnTxtTagTest = btnTxtTagTest;
-		this.btnTxtTagOm = btnTxtTagOm;
-	}
+	public Norwegian(){}
 	
 	
 	string SubTitleResult {get {return "Læringsstilstest Resultater";}}

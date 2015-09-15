@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class ResultCalculator : MonoBehaviour {
 
@@ -48,8 +49,8 @@ public class ResultCalculator : MonoBehaviour {
 				double total = at + ht;
 				print ( "at" + at + "  ht" + ht);
 				
-				robj.Holistisk = (ht / total) * 100;
-				robj.Analystisk = (at / total) * 100; 
+				robj.Holistisk = Math.Round((ht / total) * 100);
+				robj.Analystisk = Math.Round((at / total) * 100); 
 				
 				
 				for (int j = 12; j<=17; j++) {
@@ -85,16 +86,40 @@ public class ResultCalculator : MonoBehaviour {
 				}
 				print (vt +  "   " + adt + "   " + takt + "   " +knaest);
 				double totalPræf = vt + adt + takt + knaest; 
-				robj.Visuel = (vt / totalPræf) * 100; 
-				robj.Auditiv = (adt / totalPræf) * 100; 
-				robj.Taktil = (takt / totalPræf) * 100; 
-				robj.Kinaestisk = (knaest / totalPræf) * 100;
+				robj.Visuel = Math.Round ((vt / totalPræf) * 100); 
+				robj.Auditiv = Math.Round((adt / totalPræf) * 100); 
+				robj.Taktil = Math.Round((takt / totalPræf) * 100); 
+				robj.Kinaestisk =Math.Round( (knaest / totalPræf) * 100);
 				robj.UserID = rm.UserID;
 				robj.UserType = rm.UserType;
+				robj.TestTaken = true;
 				
-			
+				if(rm.Options[36].Selected == false && rm.Options[37].Selected == false){
+					robj.Lys =0;
+				}else if(rm.Options[36].Selected ==true){robj.Lys =1;}
+				else if(rm.Options[37].Selected ==true){robj.Lys =2;}
+
+				if(rm.Options[38].Selected == false && rm.Options[39].Selected == false){
+					robj.Lyd =0;
+				}else if(rm.Options[38].Selected ==true){robj.Lyd =1;}
+				else if(rm.Options[39].Selected ==true){robj.Lyd =2;}
+
+				if(rm.Options[40].Selected == false && rm.Options[41].Selected == false){
+					robj.Temperatur =0;
+				}else if(rm.Options[40].Selected ==true){robj.Temperatur =1;}
+				else if(rm.Options[41].Selected ==true){robj.Temperatur =2;}
+
+				if(rm.Options[42].Selected == false && rm.Options[43].Selected == false){
+					robj.Design =0;
+				}else if(rm.Options[42].Selected ==true){robj.Design =1;}
+				else if(rm.Options[43].Selected ==true){robj.Design =2;}
+
+				if(rm.Options[44].Selected ==false){robj.Bevaeglse =0;}else{robj.Bevaeglse =1;}
 				
+			}else{
+				robj.TestTaken = false;
 			}
+
 			robj.UserID = rm.UserID;
 			robj.UserType = rm.UserType;
 			resultModels.Add(robj);

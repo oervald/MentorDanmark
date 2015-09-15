@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
 
 public class ListItemStudent : ListItem2 {
 
@@ -37,7 +39,7 @@ public class ListItemStudent : ListItem2 {
 	public Text taktilText;
 	public Text kineastetiskHeadline;
 	public Text kineastetiskText;
-	public Text buttomText;
+	public Text buttonText;
 	public Text envir;
 
 	bool tempFoldout = true;
@@ -58,36 +60,115 @@ public class ListItemStudent : ListItem2 {
 		base.Update ();
 	}
 
-	public void SetupPage(ResultObject resultobjec){
+	public void SetupPage(ResultObject resultObject){
 
-			resultobjecValue = resultobjec;
+			resultobjecValue = resultObject;
 			GameObject container = GameObject.Find ("Container");
 			DanishStrings ds = new DanishStrings ();
 			
-		valueUserID = resultobjec.UserID;
-		valueUserType = resultobjec.UserType;
-		headlineText.text = resultobjec.UserID.ToString () + "( " + resultobjec.UserType + ")";
+		valueUserID = resultObject.UserID;
+		valueUserType = resultObject.UserType;
+		headlineText.text = resultObject.UserID.ToString () + "( " + resultObject.UserType + ")";
 
-		if (testTaken = false) {
+		if (resultObject.TestTaken == false) {
+			buttonText.text = ds.BtnTxtTagTest;
 			underContainer.SetActive (false);
 			ResetHeight();
 		} else {
+
+			if( resultObject.Analystisk > resultObject.Holistisk){
+				analytikHeadline.text = ds.TitleAnalyst + " (" + resultObject.Analystisk + "%)"; 
+				holistiskHeadline.text = ds.TitleHolistic2Part1 + resultObject.Holistisk + ds.TitleHolistic2Part2;		
+			}else if(resultObject.Holistisk > resultObject.Analystisk){
+				holistiskHeadline.text = ds.TitleHolistic1 + " (" + resultObject.Holistisk + "%)"; 
+				analytikHeadline.text = ds.TitleAnalyst2Part1 + resultObject.Analystisk + ds.TitleAnalyst2Part2;
+			}else if(resultObject.Analystisk.ToString().Equals(resultObject.Holistisk.ToString())){
+				holistiskHeadline.text = ds.TitleHolistic2Part1 + resultObject.Holistisk + ds.TitleHolistic2Part2;	
+				analytikHeadline.text = ds.TitleAnalyst2Part1 + resultObject.Analystisk + ds.TitleAnalyst2Part2;
+			}
+
+			double [] sortArray = {resultObject.Auditiv, resultObject.Taktil, resultObject.Kinaestisk, resultObject.Visuel};
+			double max = sortArray.Max();
+			if(resultObject.Auditiv == max){
+				auditivHeadline.text = ds.TitleAuditory1 + " (" + resultObject.Auditiv + "%)"; 
+				taktilHeadline.text = ds.TitleTactile2Part1 + resultObject.Taktil + ds.TitleTactile2Part2;
+				kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;
+				visuelHeadline.text = ds.TitleVisual2Part1 + resultObject.Visuel + ds.TitleVisual2Part2;
+			}
+			else if(resultObject.Taktil ==max){
+				taktilHeadline.text = ds.TitleTactile1 + " (" + resultObject.Taktil + "%)"; 
+				auditivHeadline.text = ds.TitleAuditory2Part1 + resultObject.Auditiv + ds.TitleAuditory2Part2;
+				kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;
+				visuelHeadline.text = ds.TitleVisual2Part1 + resultObject.Visuel + ds.TitleVisual2Part2;
+			}
+			else if(resultObject.Kinaestisk== max){
+				kineastetiskHeadline.text = ds.TitleKinesthetic1 + " (" + resultObject.Kinaestisk + "%)";
+				auditivHeadline.text = ds.TitleAuditory2Part1 + resultObject.Auditiv + ds.TitleAuditory2Part2;
+				taktilHeadline.text = ds.TitleTactile2Part1 + resultObject.Taktil + ds.TitleTactile2Part2;
+				visuelHeadline.text = ds.TitleVisual2Part1 + resultObject.Visuel + ds.TitleVisual2Part2;
+			}
+			else if(resultObject.Visuel == max){
+				visuelHeadline.text = ds.TitleVisual1 + " (" + resultObject.Visuel + "%)"; 
+				auditivHeadline.text = ds.TitleAuditory2Part1 + resultObject.Auditiv + ds.TitleAuditory2Part2;
+				taktilHeadline.text = ds.TitleTactile2Part1 + resultObject.Taktil + ds.TitleTactile2Part2;
+				kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;
+			}
+			if(resultObject.Auditiv == max &&resultObject.Taktil== max && resultObject.Kinaestisk ==max && resultObject.Visuel == max){
+				auditivHeadline.text = ds.TitleAuditory2Part1 + resultObject.Auditiv + ds.TitleAuditory2Part2;
+				taktilHeadline.text = ds.TitleTactile2Part1 + resultObject.Taktil + ds.TitleTactile2Part2;
+				kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;
+				visuelHeadline.text = ds.TitleVisual2Part1 + resultObject.Visuel + ds.TitleVisual2Part2;
+			}
+
 			SubTitleTitel.text = ds.SubTitleResult;
 			SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
-			analytikHeadline.text = ds.TitleAnalyst + " (" + resultobjec.Analystisk + "%)"; 
 			analytikText.text = ds.DescpriptionAnalyst; 
-			holistiskHeadline.text = ds.TitleHolistic1 + " (" + resultobjec.Holistisk + "%)"; 
 			holistiskText.text = ds.DescpriptionHolistic; 
-			SubTitlePreferences.text = ds.SubTitlePreferences; 
-			visuelHeadline.text = ds.TitleVisual1 + " (" + resultobjec.Visuel + "%)"; 
+			SubTitlePreferences.text = ds.SubTitlePreferences;
+
 			visuelText.text = ds.DescpriptionVisual; 
-			auditivHeadline.text = ds.TitleAuditory1 + " (" + resultobjec.Auditiv + "%)"; 
 			auditivText.text = ds.DescpriptionAuditory; 
-			taktilHeadline.text = ds.TitleTactile1 + " (" + resultobjec.Taktil + "%)"; 
 			taktilText.text = ds.DescpriptionTactile; 
-			kineastetiskHeadline.text = ds.TitleKinesthetic1 + " (" + resultobjec.Kinaestisk + "%)"; 
 			kineastetiskText.text = ds.DescpriptionKinesthetic; 
 			SubTitleEnvironment.text = ds.SubTitleEnvironment;
+
+			switch(resultObject.Lyd){
+			case 1:
+				envir.text += ds.EnvirSoundOn + "\n\n";
+					break;
+			case 2:
+				envir.text += ds.EnvirSoundOff + "\n\n";
+					break;
+			}
+			switch(resultObject.Lys){
+			case 1:
+				envir.text += ds.EnvirLightOn + "\n\n";
+				break;
+			case 2:
+				envir.text += ds.EnvirLightOff + "\n\n";
+				break;
+			}
+			switch(resultObject.Temperatur){
+			case 1:
+				envir.text += ds.EnvirTempHot + "\n\n";
+				break;
+			case 2:
+				envir.text += ds.EnvirTempCold + "\n\n";
+				break;
+			}
+
+			switch(resultObject.Design){
+			case 1:
+				envir.text += ds.EnvirConfertTable + "\n\n";
+				break;
+			case 2:
+				envir.text += ds.EnvirConfertSofa + "\n\n";
+				break;
+			}
+
+			if(resultObject.Bevaeglse.Equals(1)){envir.text += ds.EnvirMovment + "\n";}
+
+			buttonText.text = ds.BtnTxtTagOm;
 			setHAImage ();
 			setVATKImage ();
 

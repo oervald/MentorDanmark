@@ -7,6 +7,7 @@ public class POSTFacade : MonoBehaviour {
 	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
 	string callMethod;
 	WWW www;
+	JSONObject needToSendJSON;
 	// Use this for initialization
 	
 	void Start() {
@@ -17,7 +18,7 @@ public class POSTFacade : MonoBehaviour {
 		
 	}
 	public WWW SaveQuizAnswers (JSONObject json){
-
+		needToSendJSON = json;
 		byte [] bytes = Encoding.ASCII.GetBytes(json.Print());
 		print (bytes);
 		string serverFunction = "SaveQuizAnswers";
@@ -54,6 +55,10 @@ public class POSTFacade : MonoBehaviour {
 		else {
 			Debug.Log ("WWW Error: " + www.error);
 			print (www.text);
+			PlayerPrefs.SetString("needToSendJSON", needToSendJSON.Print());
+			Debug.Log("JSON need to save");
+			Application.LoadLevel("MentorScene");
+		
 		}    
 	}
 	
