@@ -7,6 +7,8 @@ public class ListItemStudent : ListItem2 {
 
 	[Header("Student")]
 	public GameObject viewPanel;
+	public GameObject underContainer;
+	public GameObject container;
 
 	[Header("Headlines")]
 	public Text SubTitleTitel;
@@ -43,12 +45,12 @@ public class ListItemStudent : ListItem2 {
 	private string valueUserType;
 	public ResultObject resultobjecValue;
 	public bool testTaken;
+
 	// Use this for initialization
 	public override void Start () {
 		base.Start();
 		onHeadlineClick ();
 		setImagesToFalse ();
-	
 	}
 	
 	// Update is called once per frame
@@ -59,16 +61,17 @@ public class ListItemStudent : ListItem2 {
 	public void SetupPage(ResultObject resultobjec){
 
 			resultobjecValue = resultobjec;
-		setTestNotTakenBool ();
 			GameObject container = GameObject.Find ("Container");
 			DanishStrings ds = new DanishStrings ();
 			
-		// headline skal sættes dynamisk
-			
-			valueUserID = resultobjec.UserID;
-			valueUserType = resultobjec.UserType;
-			headlineText.text = resultobjec.UserID.ToString () + "( " + resultobjec.UserType + ")";
-		if (testTaken) {
+		valueUserID = resultobjec.UserID;
+		valueUserType = resultobjec.UserType;
+		headlineText.text = resultobjec.UserID.ToString () + "( " + resultobjec.UserType + ")";
+
+		if (testTaken = false) {
+			underContainer.SetActive (false);
+			ResetHeight();
+		} else {
 			SubTitleTitel.text = ds.SubTitleResult;
 			SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
 			analytikHeadline.text = ds.TitleAnalyst + " (" + resultobjec.Analystisk + "%)"; 
@@ -85,30 +88,19 @@ public class ListItemStudent : ListItem2 {
 			kineastetiskHeadline.text = ds.TitleKinesthetic1 + " (" + resultobjec.Kinaestisk + "%)"; 
 			kineastetiskText.text = ds.DescpriptionKinesthetic; 
 			SubTitleEnvironment.text = ds.SubTitleEnvironment;
-		
 			setHAImage ();
 			setVATKImage ();
-			this.transform.SetParent (container.transform);
-			this.transform.localScale = new Vector3 (1, 1, 1);
-			ResetHeight ();
-		} else {
-
-			this.transform.SetParent (container.transform);
-			this.transform.localScale = new Vector3 (1, 1, 1);
-		
-			ResetHeight ();
-			setImagesToFalse();
 
 		}
-		
+		this.transform.SetParent (container.transform);
+		this.transform.localScale = new Vector3 (1, 1, 1);
+		ResetHeight ();
 	}
 
 	// sætter diagramerne i toppen, til falsk og true, da ellers ville ListItem ikke virke, kan måske slettes når ListItem er ændret.
 	public void onHeadlineClick(){
 		if (tempFoldout == false) {
-			if(testTaken){
 			setImagesToTrue ();
-			}
 			tempFoldout = true;
 			PlayerPrefs.SetInt("UserID", valueUserID);
 			PlayerPrefs.SetString("UserType", valueUserType);
@@ -120,13 +112,6 @@ public class ListItemStudent : ListItem2 {
 		}
 	}
 
-	public void setTestNotTakenBool(){
-		if (resultobjecValue.Analystisk != 0 && resultobjecValue.Holistisk != 0 && resultobjecValue.Auditiv != 0 && resultobjecValue.Visuel != 0 && resultobjecValue.Kinaestisk != 0 && resultobjecValue.Taktil != 0) {
-			testTaken = true;
-		} else {
-			testTaken = false;
-		}
-		}	
 	
 	public void setImagesToFalse(){
 		holistiskImage.gameObject.SetActive (false);
