@@ -75,7 +75,6 @@
      <Compile Include="Assets\Scripts\TestSiteScripts\QuizPartModel.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\QuizzOptionHandler.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\UploadAnswerFromPlayerPrefs.cs" />
-     <Compile Include="Assets\Scripts\TyskStrings.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Scripts\JSON\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
@@ -92,16 +91,16 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>C:/Users/thund_000/Documents/unity/pro/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>C:/Users/Ørvald/Documents/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>C:/Users/thund_000/Documents/unity/pro/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ <HintPath>C:/Users/Ørvald/Documents/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>C:/Users/thund_000/Documents/unity/pro/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ <HintPath>C:/Users/Ørvald/Documents/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>C:/Users/thund_000/Documents/unity/pro/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ <HintPath>C:/Users/Ørvald/Documents/MentorDanmark/MentorDanmark/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
