@@ -61,12 +61,13 @@
      <Compile Include="Assets\Scripts\ResultSceneScripts\GetNamesScript.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" />
+     <Compile Include="Assets\Scripts\ResultSceneScripts\ONLYFORTEST.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultController.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultModel.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultObject.cs" />
-     <Compile Include="Assets\Scripts\TestSiteScripts\BlaBla.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\ChangePangeScript.cs" />
+     <Compile Include="Assets\Scripts\TestSiteScripts\GetQuizOptionFacade.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\LoadQuizOptions.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\POSTAnswersController.cs" />
      <Compile Include="Assets\Scripts\TestSiteScripts\POSTFacade.cs" />

@@ -73,8 +73,8 @@ public class POSTAnswersController : MonoBehaviour {
 	public void SaveAnswers(){
 
 		ResultModel rm = new ResultModel ();
-		rm.UserID = PlayerPrefs.GetInt ("UserID");
-		rm.UserType = PlayerPrefs.GetString ("UserType").Replace('"',' ').Trim();
+		rm.UserID = PlayerPrefs.GetInt ("UserIDForJSON");
+		rm.UserType = PlayerPrefs.GetString ("UserTypeForJSON").Replace('"',' ').Trim();
 
 
 

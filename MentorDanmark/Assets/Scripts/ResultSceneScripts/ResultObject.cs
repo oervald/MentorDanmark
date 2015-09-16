@@ -6,6 +6,7 @@ using System;
 
 	int userID;
 	String userType;
+	String studentName;
 	double holistisk; 
 	double analystisk; 
 	double  visuel; 
@@ -21,10 +22,11 @@ using System;
 	bool testTaken;
 
 
-	public ResultObject (int userID, string userType, double holistisk, double analystisk, double visuel, double auditiv, double taktil, double kinaestisk, int lys, int lyd, int temperatur, int design, int bevaeglse, bool testTaken)
+	public ResultObject (int userID, string userType, double holistisk, double analystisk, double visuel, double auditiv, double taktil, double kinaestisk, int lys, int lyd, int temperatur, int design, int bevaeglse, bool testTaken, string studentName)
 	{
 		this.userID = userID;
 		this.userType = userType;
+		this.studentName = studentName;
 		this.holistisk = holistisk;
 		this.analystisk = analystisk;
 		this.visuel = visuel;
@@ -169,11 +171,19 @@ using System;
 		}
 
 
+	public string StudentName {
+			get {
+				return this.studentName;
+			}
+			set {
+				studentName = value;
+			}
+		}
 		
 
 	public override string ToString ()
 		{
-		return string.Format ("[ResultObject: Holistisk={0}, Analystisk={1}, Visuel={2}, Auditiv={3}, Taktil={4}, Kinaestisk={5}, TestTaken = {6}]", Holistisk, Analystisk, Visuel, Auditiv, Taktil, Kinaestisk, TestTaken);
+		return string.Format ("[ResultObject: Holistisk={0}, Analystisk={1}, Visuel={2}, Auditiv={3}, Taktil={4}, Kinaestisk={5}, TestTaken = {6}] , StudentName = {7}", Holistisk, Analystisk, Visuel, Auditiv, Taktil, Kinaestisk, TestTaken , StudentName);
 		}
 		
 	}

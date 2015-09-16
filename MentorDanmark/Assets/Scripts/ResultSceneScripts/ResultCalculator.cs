@@ -92,6 +92,7 @@ public class ResultCalculator : MonoBehaviour {
 				robj.Kinaestisk =Math.Round( (knaest / totalPræf) * 100);
 				robj.UserID = rm.UserID;
 				robj.UserType = rm.UserType;
+				robj.StudentName = rm.StudentName;
 				robj.TestTaken = true;
 				
 				if(rm.Options[36].Selected == false && rm.Options[37].Selected == false){
@@ -122,6 +123,7 @@ public class ResultCalculator : MonoBehaviour {
 
 			robj.UserID = rm.UserID;
 			robj.UserType = rm.UserType;
+			robj.StudentName = rm.StudentName;
 			resultModels.Add(robj);
 		}
 		

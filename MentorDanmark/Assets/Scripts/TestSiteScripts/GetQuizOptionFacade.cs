@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BlaBla : MonoBehaviour {
-
+public class GetQuizOptionFacade : MonoBehaviour {
+	
 	string baseUrl = "http://Test.api.mentoreurope.eu/Quiz/";
 	string serverFunction;
 	string callMethod;
@@ -12,29 +12,29 @@ public class BlaBla : MonoBehaviour {
 	// Use this for initialization
 	
 	void Start() {
-
-
+		
+		
 		serverFunction = "GetQuizOptions";
 		callMethod = serverFunction;
 		www = new WWW (baseUrl+serverFunction, null,CreateHeader());
 		StartCoroutine (WaitForRequest (www));
-
-	
-
+		
+		
+		
 	}
 	
 	void Update(){
-
+		
 	}
-
-
+	
+	
 	private IEnumerator WaitForRequest (WWW www)
 	{
 		yield return www;
 		
 		// If succes -> Pass the data to Controller
 		if (www.error == null) {
-
+			
 			if (callMethod == "GetQuizOptions") {
 				data = www.text;
 				
@@ -42,10 +42,10 @@ public class BlaBla : MonoBehaviour {
 				print ("Data getQuizOption == " + data);
 				JSONObject jo = new JSONObject (data);
 				qh.ParseJson (jo);
-		
+				
 			} 
-		// If errors -> Log them 
-		else {
+			// If errors -> Log them 
+			else {
 				Debug.Log ("WWW Error: " + www.error);
 				print (www.text);
 			}    
@@ -63,7 +63,4 @@ public class BlaBla : MonoBehaviour {
 		return headers;
 	}
 
-	public WWW getWWWFromQuiz(){
-		return www; 
-	}
 }

@@ -12,22 +12,22 @@ public class GetNamesScript : MonoBehaviour {
 	// Use this for initialization
 	
 	void Start() {
-		GetUserInfo ();
+	
 	}
 	
 	void Update(){
 		
 	}
-	public WWW GetUserInfo (){
+	public WWW GetUserInfo (JSONObject menuResults){
 		string serverFunction = "GetTeachingPlans";
 		callMethod = "GetUserInfo";
 		www = new WWW (baseUrl+serverFunction, null,CreateHeader());
-		StartCoroutine (WaitForRequest (www));
+		StartCoroutine (WaitForRequest (www, menuResults));
 		return www;
 		
 	}
 	
-	private IEnumerator WaitForRequest (WWW www)
+	private IEnumerator WaitForRequest (WWW www, JSONObject menuResults)
 	{
 		yield return www;
 		
@@ -36,8 +36,11 @@ public class GetNamesScript : MonoBehaviour {
 			Debug.Log (www.text);
 			if(callMethod == "GetUserInfo")
 			{
-				
-				print("Hurra");
+
+				string data = www.text;
+				JSONObject teachingPlans = new JSONObject(data);
+				MenuResultHandler mh = gameObject.GetComponent<MenuResultHandler>();
+				mh.ParseJson(menuResults,teachingPlans);
 				
 			}
 

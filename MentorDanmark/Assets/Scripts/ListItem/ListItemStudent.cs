@@ -68,7 +68,7 @@ public class ListItemStudent : ListItem2 {
 			
 		valueUserID = resultObject.UserID;
 		valueUserType = resultObject.UserType;
-		headlineText.text = resultObject.UserID.ToString () + "( " + resultObject.UserType + ")";
+		headlineText.text = resultObject.StudentName;
 
 		if (resultObject.TestTaken == false) {
 			buttonText.text = ds.BtnTxtTagTest;
@@ -183,8 +183,8 @@ public class ListItemStudent : ListItem2 {
 		if (tempFoldout == false) {
 			setImagesToTrue ();
 			tempFoldout = true;
-			PlayerPrefs.SetInt("UserID", valueUserID);
-			PlayerPrefs.SetString("UserType", valueUserType);
+			PlayerPrefs.SetInt("UserIDForJSON", valueUserID);
+			PlayerPrefs.SetString("UserTypeForJSON", valueUserType);
 			Fold();
 		} else {
 			setImagesToFalse();

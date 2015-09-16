@@ -36,11 +36,9 @@ public class MenuResultFacade : MonoBehaviour {
 			Debug.Log (www.text);
 			if(callMethod == "GetQuizResultOptions")
 			{
-				data = www.text;
-				MenuResultHandler qh = gameObject.GetComponent<MenuResultHandler> ();
-				JSONObject jo = new JSONObject (data);
-				qh.ParseJson (jo);
-				
+				JSONObject menuResults = new JSONObject(www.text);
+				GetNamesScript gns = gameObject.GetComponent<GetNamesScript>();
+				gns.GetUserInfo(menuResults);
 			}
 
 		} 

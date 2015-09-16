@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Text;
 
 
 public class MenuResultHandler : MonoBehaviour {
@@ -16,20 +17,36 @@ public class MenuResultHandler : MonoBehaviour {
 	
 	}
 
-	public void ParseJson(JSONObject json){
+	public void ParseJson(JSONObject menuResults, JSONObject teachingPlans){
 		JSONObject arr = new JSONObject (JSONObject.Type.ARRAY);
 		ResultModel rm;
 		QuizOptionModel qom;
 		List<QuizOptionModel> options = null;
 
-		for (int i = 0; i<json.Count; i++) {
+
+		for (int i = 0; i<menuResults.Count; i++) {
 			rm = new ResultModel ();
 
-			rm.UserID = (int)int.Parse (json [i].GetField ("UserID").ToString ());
-			rm.UserType = json [i].GetField ("UserType").ToString ();
+			rm.UserID = (int)int.Parse (menuResults [i].GetField ("UserID").ToString ());
+			rm.UserType = menuResults [i].GetField ("UserType").ToString ().Replace('"',' ').Trim();
+			print (rm.UserType);
+			if(rm.UserType == "Teacher"){
+				//Only for test needs the ONLYFORTESTSCRIPT
+				rm.StudentName = PlayerPrefs.GetString("UserName")+ "\t(Mentor)";
+				//Maybe solution if UserName exist in PlayerPrefs when logged in
+				//rm.StudentName = PlayerPrefs.GetString("UserName");
+			}
+
+			for(int x = 0 ; x<teachingPlans.Count ; x++){
+				int tempStudentID = int.Parse(teachingPlans[x].GetField("StudentID").ToString());
+				if(tempStudentID == rm.UserID){
+					rm.StudentName = teachingPlans[x].GetField("StudentName").ToString().Replace('"', ' ').Trim();
+					break;
+				}
+			}
 
 			options = new List<QuizOptionModel> ();
-			arr = json [i].GetField ("Answers");
+			arr = menuResults [i].GetField ("Answers");
 			for (int j = 0; j<arr.Count; j++) {
 				
 				qom = new QuizOptionModel ();
@@ -41,15 +58,17 @@ public class MenuResultHandler : MonoBehaviour {
 			}
 			rm.Options = options;
 			resultModels.Add(rm);
+
+		
+
+
 		}
-		go();
+		resultModels.Reverse ();
+		ResultCalculator resCal = gameObject.GetComponent<ResultCalculator> ();
+		
+		resCal.CalculateResult (resultModels); 
 	
 	}
 
-	public void go(){
 
-		ResultCalculator resCal = gameObject.GetComponent<ResultCalculator> ();
-		
-		 resCal.CalculateResult (resultModels); 
-	}
 }
