@@ -35,8 +35,8 @@ public class DanishStrings : MonoBehaviour {
 	public string TitleAnalyst2Part1 {get {return "Du er ";}}
 	public string TitleAnalyst2Part2  {get {return "% analytikker";}}
 	
-	public string DescpriptionAnalyst {get {return "Som analytiker foretrækker du at arbejde med én opgave ad gangen. Det er væsentligt, at der er system i arbejdet, og der er mulighed for at lægge vægt på detaljerne.Du søger faste rammer, når der skal læres, og du har derfor brug for at planlægge dit arbejde, så der er en god logik og struktur i rækkefølgen. Du kan lide at arbejde fokuseret og koncentreret uden afbrydelser og forstyrrelser og foretrækker også at komme hurtigt i gang med opgaverne.Du skal derfor sørge for at: \n-Planlægge en rækkefølge for opgaverne fra starten \n-Gå direkte i gang med opgaverne – én ad gangen \n-Have god orden og struktur i tingene – gerne konkrete anvisninger \n-Give tid til detaljerne";}}
-	
+	public string DescpriptionAnalyst {get {return "Som analytiker foretrækker du at arbejde med én opgave ad gangen. Det er væsentligt, at der er system i arbejdet, og der er mulighed for at lægge vægt på detaljerne.Du søger faste rammer, når der skal læres, og du har derfor brug for at planlægge dit arbejde, så der er en god logik og struktur i rækkefølgen. Du kan lide at arbejde fokuseret og koncentreret uden afbrydelser og forstyrrelser og foretrækker også at komme hurtigt i gang med opgaverne.";}}
+	public string DescpriptionAnalystPart2 {get {return "Du skal derfor sørge for at: \n\n-Planlægge en rækkefølge for opgaverne fra starten. \n\n-Gå direkte i gang med opgaverne – én ad gangen. \n\n-Have god orden og struktur i tingene – gerne konkrete anvisninger \n\n-Give tid til detaljerne.";}}
 	
 	public string TitleHolistic1 {get {return "Du er primært holitisk";}}
 	
@@ -44,8 +44,8 @@ public class DanishStrings : MonoBehaviour {
 	
 	public string TitleHolistic2Part2 {get {return "% holist";}}
 	
-	public string DescpriptionHolistic {get {return "Som holist lærer du bedst, når du har overblik over opgaven som helhed, og når du kan se et klart formål med den.Det er vigtigt, at du får indflydelse på arbejdsformen og dermed kan skabe egen struktur – som ikke nødvendigvis altid er logisk for andre.  Du har brug for pauser fra arbejdet, hvor du taler om noget andet eller går i gang med nye opgaver. Du behøver ikke færdiggøre opgaven, før du starter på en ny. Det er også vigtigt, at der er en god og hyggelig atmosfære omkring dig i læringssituationen.Som holist skal du derfor sørge for at:\n-Relatere opgaven til virkeligheden\n-Give dig tid til at undersøge hele opgaven/stoffet\n-Variere opgaverne. Du må gerne arbejde med flere på én gang\n-Følge din intuition";}}
-	
+	public string DescpriptionHolistic {get {return "Som holist lærer du bedst, når du har overblik over opgaven som helhed, og når du kan se et klart formål med den.Det er vigtigt, at du får indflydelse på arbejdsformen og dermed kan skabe egen struktur – som ikke nødvendigvis altid er logisk for andre.  Du har brug for pauser fra arbejdet, hvor du taler om noget andet eller går i gang med nye opgaver. Du behøver ikke færdiggøre opgaven, før du starter på en ny. Det er også vigtigt, at der er en god og hyggelig atmosfære omkring dig i læringssituationen.";}}
+	public string DescpriptionHolisticPart2 {get {return "Som holist skal du derfor sørge for at:\n\n-Relatere opgaven til virkeligheden.\n\n-Give dig tid til at undersøge hele opgaven/stoffet.\n\n-Variere opgaverne. Du må gerne arbejde med flere på én gang.\n\n-Følge din intuition.";}}
 	
 	public string TitleVisual1 {get {	return " Du er primært visuel";}}
 	
@@ -53,8 +53,8 @@ public class DanishStrings : MonoBehaviour {
 	
 	public string TitleVisual2Part2 {get {return "% visuel";}}
 	
-	public string DescpriptionVisual {get {return "Når du lærer bedst visuelt, skal indholdet vises. Det kan enten gøres via skriftlige instruktioner, tekstbøger og billeder.Når noget nyt og vanskeligt skal læres, har du som visuel brug for at skrive eller tegne noter.Det er derfor vigtigt, at du som visuel, gør brug af:\n-Trykte billeder og tekster \n-Grafer og illustrationer\n-Noter, mens du lærer\n-Indre billeder, mens du lærer";}}
-	
+	public string DescpriptionVisual {get {return "Når du lærer bedst visuelt, skal indholdet vises. Det kan enten gøres via skriftlige instruktioner, tekstbøger og billeder.Når noget nyt og vanskeligt skal læres, har du som visuel brug for at skrive eller tegne noter.";}}
+	public string DescpriptionVisualPart2 {get {return "Det er derfor vigtigt, at du som visuel, gør brug af:\n\n-Trykte billeder og tekster.\n\n-Grafer og illustrationer.\n\n-Noter, mens du lærer-\n\n-Indre billeder, mens du lærer";}}
 	
 	public string TitleAuditory1 {get {return "Du er primært auditiv";}}
 	

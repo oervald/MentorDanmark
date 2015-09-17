@@ -41,10 +41,10 @@ public class POSTAnswersController : MonoBehaviour {
 		Toggle[] temp = new Toggle[]{temp1,temp2};
 		Toggle[] des = new Toggle[]{des1,des2};
 		Toggle[] bev = new Toggle[]{bev1};
+		
 
-
-		toggles.Add(holistiskPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(analytiskPanel.GetComponentsInChildren<Toggle> ());
+		toggles.Add(holistiskPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(visuelPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(auditivPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(taktilPanel.GetComponentsInChildren<Toggle> ());

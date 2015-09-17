@@ -28,10 +28,13 @@ public class ListItemStudent : ListItem2 {
 	[Header("Text")]
 	public Text holistiskHeadline;
 	public Text holistiskText;
+	public Text holistiskHighText;
 	public Text analytikHeadline;
 	public Text analytikText;
+	public Text analyiskHighText;
 	public Text visuelHeadline;
 	public Text visuelText;
+	public Text visuelHighText;
 	public Text auditivHeadline;
 	public Text auditivText;
 	public Text taktilHeadline;
@@ -124,10 +127,13 @@ public class ListItemStudent : ListItem2 {
 
 			SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
 			analytikText.text = ds.DescpriptionAnalyst; 
+			analyiskHighText.text = ds.DescpriptionAnalystPart2;
 			holistiskText.text = ds.DescpriptionHolistic; 
+			holistiskHighText.text = ds.DescpriptionHolisticPart2;
 			SubTitlePreferences.text = ds.SubTitlePreferences;
 
 			visuelText.text = ds.DescpriptionVisual; 
+			visuelHighText.text = ds.DescpriptionVisualPart2;
 			auditivText.text = ds.DescpriptionAuditory; 
 			taktilText.text = ds.DescpriptionTactile; 
 			kineastetiskText.text = ds.DescpriptionKinesthetic; 
