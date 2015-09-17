@@ -105,8 +105,6 @@ public class POSTAnswersController : MonoBehaviour {
 				}
 			}
 		}
-		print (" JSON POSTED to SAVE " + rm.ToString ());
-
 			POSTResultCalculator cal = gameObject.GetComponent<POSTResultCalculator>();
 
 			cal.ParseToJsonResult(rm);

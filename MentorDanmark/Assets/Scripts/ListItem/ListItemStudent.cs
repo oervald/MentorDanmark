@@ -42,17 +42,20 @@ public class ListItemStudent : ListItem2 {
 	public Text buttonText;
 	public Text envir;
 
-	bool tempFoldout = true;
+	public bool tempFoldout = true;
 	private int valueUserID;
 	private string valueUserType;
 	public ResultObject resultobjecValue;
 	public bool testTaken;
+
 
 	// Use this for initialization
 	public override void Start () {
 		base.Start();
 		onHeadlineClick ();
 		setImagesToFalse ();
+
+	
 	}
 	
 	// Update is called once per frame
@@ -176,21 +179,25 @@ public class ListItemStudent : ListItem2 {
 		this.transform.SetParent (container.transform);
 		this.transform.localScale = new Vector3 (1, 1, 1);
 		ResetHeight ();
+	
 	}
 
 	// sætter diagramerne i toppen, til falsk og true, da ellers ville ListItem ikke virke, kan måske slettes når ListItem er ændret.
-	public void onHeadlineClick(){
+	public void onHeadlineClick( ){
+	
+
 		if (tempFoldout == false) {
 			setImagesToTrue ();
 			tempFoldout = true;
-			PlayerPrefs.SetInt("UserIDForJSON", valueUserID);
-			PlayerPrefs.SetString("UserTypeForJSON", valueUserType);
-			Fold();
+			PlayerPrefs.SetInt ("UserIDForJSON", valueUserID);
+			PlayerPrefs.SetString ("UserTypeForJSON", valueUserType);
+			Fold ();
 		} else {
-			setImagesToFalse();
+			setImagesToFalse ();
 			tempFoldout = false;
-			Fold();
+			Fold ();
 		}
+
 	}
 
 	

@@ -47,7 +47,7 @@ public class ResultCalculator : MonoBehaviour {
 				}
 				
 				double total = at + ht;
-				print ( "at" + at + "  ht" + ht);
+
 				
 				robj.Holistisk = Math.Round((ht / total) * 100);
 				robj.Analystisk = Math.Round((at / total) * 100); 
@@ -80,11 +80,10 @@ public class ResultCalculator : MonoBehaviour {
 
 					if (rm.Options [k].Selected == true) {
 						knaest++; 
-						print ("Kinæstetisk" + knaest);
+					
 				
 					}
 				}
-				print (vt +  "   " + adt + "   " + takt + "   " +knaest);
 				double totalPræf = vt + adt + takt + knaest; 
 				robj.Visuel = Math.Round ((vt / totalPræf) * 100); 
 				robj.Auditiv = Math.Round((adt / totalPræf) * 100); 

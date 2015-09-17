@@ -30,7 +30,6 @@ public class POSTResultCalculator : MonoBehaviour {
 			arr.Add(ans);
 			}
 
-		print ("JSON going out " + json.Print());
 		POSTFacade facade = gameObject.GetComponent<POSTFacade> ();
 		facade.SaveQuizAnswers (json);
 	}

@@ -12,7 +12,7 @@ public class UploadAnswerFromPlayerPrefs : MonoBehaviour {
 	JSONObject needToSendJSON;
 	// Use this for initialization
 	void Start () {
-		timerFloat = 20.0f;
+		timerFloat = 10.0f;
 
 	}
 	
@@ -21,7 +21,7 @@ public class UploadAnswerFromPlayerPrefs : MonoBehaviour {
 		timerFloat -= Time.deltaTime;
 		if (timerFloat < 0) {
 			checkForJSON ();
-			timerFloat = 20.0f;
+			timerFloat = 10.0f;
 		}
 	}
 
@@ -31,6 +31,9 @@ public class UploadAnswerFromPlayerPrefs : MonoBehaviour {
 			string notEncodedJSON = PlayerPrefs.GetString("needToSendJSON");
 			JSONObject j = new JSONObject(notEncodedJSON);
 			SaveQuizAnswers(j);
+			if(Application.loadedLevelName == "MentorScene"){
+				Application.LoadLevel("MentorScene");
+			}
 			PlayerPrefs.DeleteKey("needToSendJSON");
 		}
 

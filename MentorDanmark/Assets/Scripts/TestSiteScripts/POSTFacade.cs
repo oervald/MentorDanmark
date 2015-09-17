@@ -20,7 +20,6 @@ public class POSTFacade : MonoBehaviour {
 	public WWW SaveQuizAnswers (JSONObject json){
 		needToSendJSON = json;
 		byte [] bytes = Encoding.ASCII.GetBytes(json.Print());
-		print (bytes);
 		string serverFunction = "SaveQuizAnswers";
 		callMethod = "POSTAnswers";
 		www = new WWW (baseUrl+serverFunction, bytes,CreateHeader());
@@ -38,17 +37,7 @@ public class POSTFacade : MonoBehaviour {
 			Debug.Log (www.text);
 			if(callMethod == "POSTAnswers")
 			{
-
 				Application.LoadLevel("MentorScene");
-			
-			}
-			if(callMethod == "PostTrial")
-			{
-				print ("Trial Successfully Saved!");
-			}
-			if(callMethod == "PostAppointment")
-			{
-				print ("Appointment Successfully Saved!");
 			}
 		} 
 		// If errors -> Log them 

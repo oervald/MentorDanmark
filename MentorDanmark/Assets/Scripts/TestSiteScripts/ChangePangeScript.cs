@@ -55,7 +55,7 @@ public class ChangePangeScript : MonoBehaviour {
 		active = (RectTransform) siteList[pageNumber];
 		active.transform.SetAsLastSibling();
 		pageNumber++;
-		print (pageNumber);
+	
 		
 	}
 }

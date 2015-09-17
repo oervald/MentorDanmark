@@ -1,16 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs">
-    <Files>
-      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" Line="35" Column="67" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\ResultModel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\ResultObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\ResultController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ListItem\ListItemStudent.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResultSceneScripts\ONLYFORTEST.cs" Line="14" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
