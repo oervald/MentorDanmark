@@ -9,8 +9,6 @@ public class DanishStrings : MonoBehaviour {
 	public DanishStrings (){
 	}
 	
-	public string SubTitleResult {get {return "Læringsstilstest Resultater";}}
-	
 	public string SubTitleThinkingStyle {get {return "Tænkestil";}}
 	
 	public string SubTitlePreferences {get {return "Læringspræferencer";}}
@@ -90,7 +88,10 @@ public class DanishStrings : MonoBehaviour {
  	public string BtnTxtTagTest {get {return "Tag test";}}
 	
 	public string BtnTxtTagOm {get {return "Tag test om";}}
-	
+
+	public string QuestionTestSceenPart1 {get {return "Forestil dig, at du skal lære noget nyt eller vanskeligt. Tryk på de udsagn, der passer på dig";}}
+
+	public string QuestionTestSceenPart2 {get {return "Sæt kryds ved det udsagn, der passer bedst på dig. Jeg koncentrerer mig bedst";}}
 }
 
 

@@ -31,7 +31,7 @@ public class MenuResultHandler : MonoBehaviour {
 			rm.UserType = menuResults [i].GetField ("UserType").ToString ().Replace('"',' ').Trim();
 			if(rm.UserType == "Teacher"){
 				//Only for test needs the ONLYFORTESTSCRIPT
-				rm.StudentName = PlayerPrefs.GetString("UserName")+ "\t(Mentor)";
+				rm.StudentName = PlayerPrefs.GetString("UserName");
 				//Maybe solution if UserName exist in PlayerPrefs when logged in
 				//rm.StudentName = PlayerPrefs.GetString("UserName");
 			}

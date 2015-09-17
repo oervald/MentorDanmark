@@ -13,7 +13,6 @@ public class ListItemStudent : ListItem2 {
 	public GameObject container;
 
 	[Header("Headlines")]
-	public Text SubTitleTitel;
 	public Text SubTitleThinkingStyle;
 	public Text SubTitlePreferences;
 	public Text SubTitleEnvironment;
@@ -123,7 +122,6 @@ public class ListItemStudent : ListItem2 {
 				visuelHeadline.text = ds.TitleVisual2Part1 + resultObject.Visuel + ds.TitleVisual2Part2;
 			}
 
-			SubTitleTitel.text = ds.SubTitleResult;
 			SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
 			analytikText.text = ds.DescpriptionAnalyst; 
 			holistiskText.text = ds.DescpriptionHolistic; 
