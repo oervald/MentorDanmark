@@ -41,7 +41,6 @@ public class POSTAnswersController : MonoBehaviour {
 		Toggle[] temp = new Toggle[]{temp1,temp2};
 		Toggle[] des = new Toggle[]{des1,des2};
 		Toggle[] bev = new Toggle[]{bev1};
-		
 
 		toggles.Add(analytiskPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(holistiskPanel.GetComponentsInChildren<Toggle> ());
@@ -50,66 +49,47 @@ public class POSTAnswersController : MonoBehaviour {
 		toggles.Add(taktilPanel.GetComponentsInChildren<Toggle> ());
 		toggles.Add(kinaestestiskPanel.GetComponentsInChildren<Toggle> ());
 	
-	
 		toggles.Add(lys);
 		toggles.Add(lyd);
 		toggles.Add(temp);
 		toggles.Add (des);
 		toggles.Add(bev);
 
-
-	
-
 		options = new List<QuizPartModel> ();
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-
 	}
 
-	public void SaveAnswers(){
+	public void SaveAnswers(string command){
 
 		ResultModel rm = new ResultModel ();
-		rm.UserID = PlayerPrefs.GetInt ("UserIDForJSON");
-		rm.UserType = PlayerPrefs.GetString ("UserTypeForJSON").Replace('"',' ').Trim();
-
-
+		rm.UserID = PlayerPrefs.GetInt ("UserIDforTest");
+		rm.UserType = PlayerPrefs.GetString ("UserTypeforTest").Replace('"',' ').Trim();
 
 		foreach (QuizPartModel qpm in options) {
-
 			foreach(QuizOptionModel qom in qpm.Options){
-
 				rm.Options.Add(qom);
 			}
 		}
 	
 		int counter = 0;
 		for (int i=0; i<=toggles.Count-1; i++) {
-		
 				int limit = toggles[i].Length;
 				for(int x =0; x<limit; x++){
 
 			if(toggles[i][x].isOn == true){
-
 				rm.Options[counter].Selected = true;
 					counter++;
-
 			}else if(toggles[i][x].isOn ==false){
-
 				rm.Options[counter].Selected = false;
-					counter++;
-				
+					counter++;	
 				}
 			}
 		}
 			POSTResultCalculator cal = gameObject.GetComponent<POSTResultCalculator>();
-
-			cal.ParseToJsonResult(rm);
-	
-		
+			cal.ParseToJsonResult(rm, command);
 	}
 
 }

@@ -62,19 +62,19 @@ public class DanishStrings : MonoBehaviour {
 	
 	public string SubTitleEnvironment {get {return "Læringsmiljø";}}
 	
-	public string EnvirLightOn{get {return "- Sørg for at arbejde ved en god lampe eller tæt på vinduet";}}
-	public string  EnvirLightOff{ get {return "";}}
+	public string EnvirLightOn{get {return "♦ Sørg for at arbejde ved en god lampe eller tæt på vinduet";}}
+	public string  EnvirLightOff{ get {return "♦ Sørg for at sidde et sted hvor der ikke er for meget lys";}}
 	
-	public string EnvirSoundOn{get {return "- Sørg for at sidde et sted med baggrundsstøj fra andre eller musik";}}
-	public string EnvirSoundOff{get {return "";}}
+	public string EnvirSoundOn{get {return "♦ Sørg for at sidde et sted med baggrundsstøj fra andre eller musik";}}
+	public string EnvirSoundOff{get {return "♦ Sørg for at sidde et sted for der er roligt så du ikke bliver forstyret";}}
 	
-	public string EnvirTempHot{get {return "";}}
-	public string EnvirTempCold{get {return "- Sørg for at sidde et køligt sted";}}
+	public string EnvirTempHot{get {return "♦ Sørg for der ikke er for koldt det sted du læser";}}
+	public string EnvirTempCold{get {return "♦ Sørg for at sidde et køligt sted";}}
 	
-	public string EnvirConfertTable{get {return "- Sørg for at sidde ved et godt bord";}}
-	public string EnvirConfertSofa{get {return "";}}
+	public string EnvirConfertTable{get {return "♦ Sørg for at sidde ved et godt bord";}}
+	public string EnvirConfertSofa{get {return "♦ Sid blødt og komfortabelt når du læser";}}
 	
-	public string EnvirMovment{get {return "- Sørg for at holde bevægelsespauser";}}
+	public string EnvirMovment{get {return "♦ Sørg for at holde bevægelsespauser";}}
 	
 	
 	public string TitleAnalyst {get {return "Du er primært analytikker";}}
@@ -119,7 +119,7 @@ public class DanishStrings : MonoBehaviour {
 	public string TitleTactile2Part2 {get {return "% taktil";}}
 	
 	public string DescpriptionTactile {get {return "Som taktil lærer du bedst, når du får lov til at bruge hænderne.Det er vigtigt, at du selv styrer blyanten og også har mulighed for at sidde med noget i hænderne, når der blot skal lyttes. Du foretrækker at løse praktiske opgaver med konkret materiale, e.g. spil. For nemmere at bevare koncentrationen, når du lærer, er det godt at skrive noter, lave illustrationer eller strege nøgleord under i teksten.";}}
-	public string [] descpriptionTectilePart2 {get {return descriptionTaktilArray;}}
+	public string [] descpriptionTactilePart2 {get {return descriptionTaktilArray;}}
 	
 	
 	public string TitleKinesthetic1 {get {return "Du er primært kinæstetisk";}}

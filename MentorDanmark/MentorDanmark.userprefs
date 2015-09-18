@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ListItem\ListItemStudent.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\JSONDemo\Assets\Scripts\SaveResultScripts\POSTResultCalculator.cs">
     <Files>
-      <File FileName="Assets\Scripts\DanishStrings.cs" Line="49" Column="5" />
-      <File FileName="Assets\Scripts\ListItem\ListItemStudent.cs" Line="144" Column="24" />
+      <File FileName="..\..\JSONDemo\Assets\Scripts\MenuResultHandler.cs" Line="22" Column="39" />
+      <File FileName="..\..\JSONDemo\Assets\Scripts\SaveResultScripts\POSTResultCalculator.cs" Line="16" Column="159" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

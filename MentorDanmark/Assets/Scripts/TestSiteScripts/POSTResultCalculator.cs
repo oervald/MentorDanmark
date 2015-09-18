@@ -14,7 +14,7 @@ public class POSTResultCalculator : MonoBehaviour {
 	
 	}
 	//Creates a JSON from a resultModel and parses it to the POSTFacade
-	public void ParseToJsonResult(ResultModel resultModel){
+	public void ParseToJsonResult(ResultModel resultModel, string command){
 		JSONObject json = new JSONObject (JSONObject.Type.OBJECT);
 
 			json.AddField("UserID", resultModel.UserID);
@@ -29,9 +29,15 @@ public class POSTResultCalculator : MonoBehaviour {
 				ans.AddField("Selected",qm.Selected);
 			arr.Add(ans);
 			}
-
+		switch(command){
+		case "SaveToServer":
 		POSTFacade facade = gameObject.GetComponent<POSTFacade> ();
-		facade.SaveQuizAnswers (json);
+			facade.SaveQuizAnswers (json);
+			break;
+		case "SaveLocal":
+			PlayerPrefs.SetString(resultModel.UserID+"_TestToSave", json.Print());
+			break;
+		}
 	}
 }
 	

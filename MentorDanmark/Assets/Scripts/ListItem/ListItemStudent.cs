@@ -138,62 +138,72 @@ public class ListItemStudent : ListItem2 {
 			analytikText.text = ds.DescpriptionAnalyst;
 			string[] descriptionAnalyst2 = ds.DescpriptionAnalystPart2;
 
-			Text[] arr = analytiskHighlightPanel.GetComponentsInChildren<Text>();
+			Text[] arrAnalytisk = analytiskHighlightPanel.GetComponentsInChildren<Text>();
+			Text[] arrHolistisk = holistiskHighlightPanel.GetComponentsInChildren<Text>();
+			Text[] arrVisuel = visuelHighlightPanel.GetComponentsInChildren<Text>();
+			Text[] arrKinaestetisk = kinæstetiskHighlightPanel.GetComponentsInChildren<Text>();
+			Text[] arrAuditiv = auditivHighlightPanel.GetComponentsInChildren<Text>();
+			Text[] arrTaktil = taktilHighlightPanel.GetComponentsInChildren<Text>();
+		
 
-			for(int q=0; q< arr.Count(); q++){
-				arr[q].text =descriptionAnalyst2[q];
-				print(arr[q].text);
+
+			for(int q=0; q< 5; q++){
+				arrAnalytisk[q].text =ds.DescpriptionAnalystPart2[q];
+				arrHolistisk[q].text = ds.DescpriptionHolisticPart2[q];
+				arrVisuel[q].text = ds.DescpriptionVisualPart2[q];
+				arrKinaestetisk[q].text = ds.descpriptionKinestheticPart2[q];
+				arrAuditiv[q].text = ds.DescpriptionAuditoryPart2[q];
+				arrTaktil[q].text = ds.descpriptionTactilePart2[q];
+		
 			}
-		   // analyiskHighText.text = ds.DescpriptionAnalystPart2;
+		 
 			holistiskText.text = ds.DescpriptionHolistic; 
-
-
-
-			holistiskHighText.text = ds.DescpriptionHolisticPart2;
 			SubTitlePreferences.text = ds.SubTitlePreferences;
-
 			visuelText.text = ds.DescpriptionVisual; 
-			visuelHighText.text = ds.DescpriptionVisualPart2;
 			auditivText.text = ds.DescpriptionAuditory; 
 			taktilText.text = ds.DescpriptionTactile; 
 			kineastetiskText.text = ds.DescpriptionKinesthetic; 
 			SubTitleEnvironment.text = ds.SubTitleEnvironment;
 
+			Text[] arrLaeringsMiljoe = læringsstilsmiljøHighlightPanel.GetComponentsInChildren<Text>();
+
+
 			switch(resultObject.Lyd){
 			case 1:
-				envir.text += ds.EnvirSoundOn + "\n\n";
+				arrLaeringsMiljoe[0].text = ds.EnvirSoundOff;
 					break;
 			case 2:
-				envir.text += ds.EnvirSoundOff + "\n\n";
+				arrLaeringsMiljoe[0].text = ds.EnvirSoundOn;
 					break;
-			}
+			};
 			switch(resultObject.Lys){
 			case 1:
-				envir.text += ds.EnvirLightOn + "\n\n";
+				arrLaeringsMiljoe[1].text = ds.EnvirLightOn;
 				break;
 			case 2:
-				envir.text += ds.EnvirLightOff + "\n\n";
+				arrLaeringsMiljoe[1].text = ds.EnvirLightOff;
 				break;
-			}
+			};
 			switch(resultObject.Temperatur){
 			case 1:
-				envir.text += ds.EnvirTempHot + "\n\n";
+				arrLaeringsMiljoe[2].text = ds.EnvirTempHot;
 				break;
 			case 2:
-				envir.text += ds.EnvirTempCold + "\n\n";
+				arrLaeringsMiljoe[2].text = ds.EnvirTempCold;
 				break;
-			}
+			};
 
 			switch(resultObject.Design){
 			case 1:
-				envir.text += ds.EnvirConfertTable + "\n\n";
+				arrLaeringsMiljoe[3].text = ds.EnvirConfertTable;
 				break;
 			case 2:
-				envir.text += ds.EnvirConfertSofa + "\n\n";
+				arrLaeringsMiljoe[3].text= ds.EnvirConfertSofa;
 				break;
-			}
+			};
 
-			if(resultObject.Bevaeglse.Equals(1)){envir.text += ds.EnvirMovment + "\n";}
+			if(resultObject.Bevaeglse.Equals(1)){
+				arrLaeringsMiljoe[4].text= ds.EnvirMovment;};
 
 			buttonText.text = ds.BtnTxtTagOm;
 			setHAImage ();

@@ -16,14 +16,17 @@ public class ChangePangeScript : MonoBehaviour {
 	public RectTransform Bevaegelse;
 
 	private int pageNumber;
-	
+	POSTAnswersController pac;
 	ArrayList siteList;
+
 	void OnShow(){
 		Holistisk.transform.SetAsLastSibling ();
+
 
 	}
 	// Use this for initialization
 	void Start () {
+		pac = gameObject.GetComponent<POSTAnswersController> ();
 		siteList = new ArrayList ();
 		siteList.Add (Holistisk);
 		siteList.Add (Analytisk);
@@ -51,12 +54,20 @@ public class ChangePangeScript : MonoBehaviour {
 	}
 	
 	public void ChangePage(){
+		saveLocal ();
 		RectTransform active = new RectTransform ();
 		active = (RectTransform) siteList[pageNumber];
 		active.transform.SetAsLastSibling();
 		pageNumber++;
 	
 		
+	}
+
+	public void saveLocal(){
+		pac.SaveAnswers ("SaveLocal");
+}
+	public void ChangeToMentorAndSave(){
+		pac.SaveAnswers ("SaveToServer");
 	}
 }
 
