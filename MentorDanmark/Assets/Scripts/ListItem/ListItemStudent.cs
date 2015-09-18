@@ -53,6 +53,12 @@ public class ListItemStudent : ListItem2 {
 
 	[Header ("HiglightPanels")]
 	public GameObject analytiskHighlightPanel;
+	public GameObject holistiskHighlightPanel;
+	public GameObject visuelHighlightPanel;
+	public GameObject auditivHighlightPanel;
+	public GameObject taktilHighlightPanel;
+	public GameObject kinæstetiskHighlightPanel;
+	public GameObject læringsstilsmiljøHighlightPanel;
 
 	// Use this for initialization
 	public override void Start () {
