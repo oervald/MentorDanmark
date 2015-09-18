@@ -4,9 +4,17 @@ using System.Collections;
 //indholder stings til dansk text til appen.
 
 public class DanishStrings : MonoBehaviour {
-	
+	string[] descriptionAnalystArray;
 	
 	public DanishStrings (){
+		descriptionAnalystArray = new string[] {
+			"Du skal derfor sørge for at:",
+			"1. Planlægge en rækkefølge for opgaverne fra starten.",
+			"2. Gå direkte i gang med opgaverne – én ad gangen.",
+			"3. Have god orden og struktur i tingene – gerne konkrete anvisninger.",
+			"4. Give tid til detaljerne."
+		};
+
 	}
 	
 	public string SubTitleThinkingStyle {get {return "Tænkestil";}}
@@ -36,8 +44,7 @@ public class DanishStrings : MonoBehaviour {
 	public string TitleAnalyst2Part2  {get {return "% analytikker";}}
 	
 	public string DescpriptionAnalyst {get {return "Som analytiker foretrækker du at arbejde med én opgave ad gangen. Det er væsentligt, at der er system i arbejdet, og der er mulighed for at lægge vægt på detaljerne.Du søger faste rammer, når der skal læres, og du har derfor brug for at planlægge dit arbejde, så der er en god logik og struktur i rækkefølgen. Du kan lide at arbejde fokuseret og koncentreret uden afbrydelser og forstyrrelser og foretrækker også at komme hurtigt i gang med opgaverne.";}}
-	public string DescpriptionAnalystPart2 {get {return "Du skal derfor sørge for at: \n\n-Planlægge en rækkefølge for opgaverne fra starten. \n\n-Gå direkte i gang med opgaverne – én ad gangen. \n\n-Have god orden og struktur i tingene – gerne konkrete anvisninger \n\n-Give tid til detaljerne.";}}
-	
+	public string [] DescpriptionAnalystPart2 { get { return descriptionAnalystArray; } }
 	public string TitleHolistic1 {get {return "Du er primært holitisk";}}
 	
 	public string TitleHolistic2Part1 {get {	return "Du er ";}}

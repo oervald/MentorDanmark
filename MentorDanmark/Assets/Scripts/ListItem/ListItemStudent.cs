@@ -51,6 +51,9 @@ public class ListItemStudent : ListItem2 {
 	public bool testTaken;
 
 
+	[Header ("HiglightPanels")]
+	public GameObject analytiskHighlightPanel;
+
 	// Use this for initialization
 	public override void Start () {
 		base.Start();
@@ -126,9 +129,20 @@ public class ListItemStudent : ListItem2 {
 			}
 
 			SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
-			analytikText.text = ds.DescpriptionAnalyst; 
-			analyiskHighText.text = ds.DescpriptionAnalystPart2;
+			analytikText.text = ds.DescpriptionAnalyst;
+			string[] descriptionAnalyst2 = ds.DescpriptionAnalystPart2;
+
+			Text[] arr = analytiskHighlightPanel.GetComponentsInChildren<Text>();
+
+			for(int q=0; q< arr.Count(); q++){
+				arr[q].text =descriptionAnalyst2[q];
+				print(arr[q].text);
+			}
+		   // analyiskHighText.text = ds.DescpriptionAnalystPart2;
 			holistiskText.text = ds.DescpriptionHolistic; 
+
+
+
 			holistiskHighText.text = ds.DescpriptionHolisticPart2;
 			SubTitlePreferences.text = ds.SubTitlePreferences;
 
@@ -193,8 +207,6 @@ public class ListItemStudent : ListItem2 {
 		if (tempFoldout == false) {
 			setImagesToTrue ();
 			tempFoldout = true;
-			PlayerPrefs.SetInt ("UserIDForJSON", valueUserID);
-			PlayerPrefs.SetString ("UserTypeForJSON", valueUserType);
 			Fold ();
 		} else {
 			setImagesToFalse ();
@@ -241,6 +253,11 @@ public class ListItemStudent : ListItem2 {
 		auditivImage.fillAmount = kineastetiskFloat + taktilFloat + auditivFloat;
 		taktilImage.fillAmount = kineastetiskFloat + taktilFloat;
 		kineastetiskImage.fillAmount = kineastetiskFloat;
+	}
+	public void GoToTest(){
+		PlayerPrefs.SetInt ("UserIDforTest", resultobjecValue.UserID);
+		PlayerPrefs.SetString ("UserTypeforTest", resultobjecValue.UserType);
+		Application.LoadLevel ("TestScene");
 	}
 
 }
