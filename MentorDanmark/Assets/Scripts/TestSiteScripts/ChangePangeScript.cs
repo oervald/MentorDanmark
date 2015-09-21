@@ -41,7 +41,7 @@ public class ChangePangeScript : MonoBehaviour {
 		siteList.Add (Design);
 		siteList.Add (Bevaegelse);
 
-		pageNumber = 1;
+		pageNumber = 0;
 		Holistisk.transform.SetAsLastSibling ();
 
 		
@@ -61,6 +61,14 @@ public class ChangePangeScript : MonoBehaviour {
 		pageNumber++;
 	
 		
+	}
+
+	public void ChangePageBack(){
+		saveLocal ();
+		RectTransform active = new RectTransform ();
+		active = (RectTransform)siteList [pageNumber - 1];
+		active.transform.SetAsLastSibling ();
+		pageNumber--;
 	}
 
 	public void saveLocal(){
