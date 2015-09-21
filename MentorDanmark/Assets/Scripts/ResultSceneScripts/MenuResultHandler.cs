@@ -56,6 +56,7 @@ public class MenuResultHandler : MonoBehaviour {
 				options.Add (qom);
 			}
 			rm.Options = options;
+
 			resultModels.Add(rm);
 
 		

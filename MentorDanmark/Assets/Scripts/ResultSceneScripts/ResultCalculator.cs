@@ -20,9 +20,9 @@ public class ResultCalculator : MonoBehaviour {
 		ResultObject robj = new ResultObject();
 		foreach (ResultModel rm in resModels) {
 			robj=	new ResultObject (); 
-		
-			if (rm.Options.Count != 0) {
-				
+
+			if (rm.Options.Count != 0 && (rm.Options!= null)) {
+				print ("I'm in the check");
 				double ht = 0; 
 				double at = 0;
 				double vt = 0; 
@@ -118,7 +118,9 @@ public class ResultCalculator : MonoBehaviour {
 				
 			}else{
 				robj.TestTaken = false;
+
 			}
+
 
 			robj.UserID = rm.UserID;
 			robj.UserType = rm.UserType;

@@ -1,13 +1,26 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\JSONDemo\Assets\Scripts\SaveResultScripts\POSTResultCalculator.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs">
     <Files>
-      <File FileName="..\..\JSONDemo\Assets\Scripts\MenuResultHandler.cs" Line="22" Column="39" />
-      <File FileName="..\..\JSONDemo\Assets\Scripts\SaveResultScripts\POSTResultCalculator.cs" Line="16" Column="159" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" Line="25" Column="32" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultObject.cs" Line="44" Column="24" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" Line="33" Column="24" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\GetNamesScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" Line="59" Column="4" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultModel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ListItem\ListItemStudent.cs" Line="82" Column="33" />
+      <File FileName="Assets\Scripts\TestSiteScripts\POSTFacade.cs" Line="44" Column="65" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" line="20" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

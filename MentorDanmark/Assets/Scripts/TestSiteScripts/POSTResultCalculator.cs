@@ -19,6 +19,7 @@ public class POSTResultCalculator : MonoBehaviour {
 
 			json.AddField("UserID", resultModel.UserID);
 			json.AddField("UserType", resultModel.UserType);
+			
 	
 			JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
 			json.AddField("Answers",arr);
@@ -27,15 +28,16 @@ public class POSTResultCalculator : MonoBehaviour {
 				ans.AddField("ID",qm.Id);
 				ans.AddField("Title",qm.Title);
 				ans.AddField("Selected",qm.Selected);
+
 			arr.Add(ans);
 			}
 		switch(command){
 		case "SaveToServer":
 		POSTFacade facade = gameObject.GetComponent<POSTFacade> ();
-			facade.SaveQuizAnswers (json);
+			facade.SaveQuizAnswers (json,resultModel.UserID.ToString());
 			break;
 		case "SaveLocal":
-			PlayerPrefs.SetString(resultModel.UserID+"_TestToSave", json.Print());
+			PlayerPrefs.SetString("TestToSave_"+resultModel.UserID, json.Print());
 			break;
 		}
 	}

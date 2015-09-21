@@ -30,7 +30,7 @@ public class MenuResultFacade : MonoBehaviour {
 	private IEnumerator WaitForRequest (WWW www)
 	{
 		yield return www;
-
+		Debug.Log (www.text);
 		// If succes -> Pass the data to Controller
 		if (www.error == null) {
 			Debug.Log (www.text);
