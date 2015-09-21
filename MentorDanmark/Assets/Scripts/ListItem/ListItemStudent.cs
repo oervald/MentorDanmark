@@ -150,7 +150,8 @@ public class ListItemStudent : ListItem2 {
 			taktilHeadline.text = ds.TitleTactile2Part1 + resultObject.Taktil + ds.TitleTactile2Part2;
 			kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;
 		}
-		if(resultObject.Auditiv == max &&resultObject.Taktil== max && resultObject.Kinaestisk ==max && resultObject.Visuel == max){
+		else if(resultObject.Auditiv == max &&resultObject.Taktil== max && resultObject.Kinaestisk ==max && resultObject.Visuel == max){
+			print(max);
 			auditivHeadline.text = ds.TitleAuditory2Part1 + resultObject.Auditiv + ds.TitleAuditory2Part2;
 			taktilHeadline.text = ds.TitleTactile2Part1 + resultObject.Taktil + ds.TitleTactile2Part2;
 			kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;

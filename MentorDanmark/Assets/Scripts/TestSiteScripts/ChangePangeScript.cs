@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ChangePangeScript : MonoBehaviour {
 
-	public RectTransform Holistisk;
 	public RectTransform Analytisk;
+	public RectTransform Holistisk;
 	public RectTransform Visuel;
 	public RectTransform Audiotiv;
 	public RectTransform Taktil;
@@ -20,7 +20,7 @@ public class ChangePangeScript : MonoBehaviour {
 	ArrayList siteList;
 
 	void OnShow(){
-		Holistisk.transform.SetAsLastSibling ();
+		Analytisk.transform.SetAsLastSibling ();
 
 
 	}
@@ -56,9 +56,10 @@ public class ChangePangeScript : MonoBehaviour {
 	public void ChangePage(){
 		saveLocal ();
 		RectTransform active = new RectTransform ();
+		pageNumber++;
 		active = (RectTransform) siteList[pageNumber];
 		active.transform.SetAsLastSibling();
-		pageNumber++;
+
 	
 		
 	}
@@ -66,9 +67,10 @@ public class ChangePangeScript : MonoBehaviour {
 	public void ChangePageBack(){
 		saveLocal ();
 		RectTransform active = new RectTransform ();
-		active = (RectTransform)siteList [pageNumber - 1];
-		active.transform.SetAsLastSibling ();
 		pageNumber--;
+		active = (RectTransform)siteList [pageNumber];
+		active.transform.SetAsLastSibling ();
+
 	}
 
 	public void saveLocal(){

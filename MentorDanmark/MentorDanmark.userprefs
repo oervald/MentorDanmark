@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TestSiteScripts\ChangePangeScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs">
     <Files>
-      <File FileName="Assets\Scripts\TestSiteScripts\ChangePangeScript.cs" Line="44" Column="17" />
+      <File FileName="Assets\Scripts\TestSiteScripts\ChangePangeScript.cs" Line="61" Column="39" />
+      <File FileName="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" Line="58" Column="21" />
+      <File FileName="Assets\Scripts\ListItem\ListItemStudent.cs" Line="154" Column="15" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -11,9 +13,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Ørvald\Documents\MentorDanmark\MentorDanmark\Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" line="20" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

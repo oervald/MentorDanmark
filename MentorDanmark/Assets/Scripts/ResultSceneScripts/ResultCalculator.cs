@@ -50,7 +50,13 @@ public class ResultCalculator : MonoBehaviour {
 
 				
 				robj.Holistisk = Math.Round((ht / total) * 100);
+				if(double.IsNaN(robj.Holistisk)){
+					robj.Holistisk = 0.0;
+				}
 				robj.Analystisk = Math.Round((at / total) * 100); 
+				if(double.IsNaN(robj.Analystisk)){
+					robj.Analystisk = 0.0;
+				}
 				
 				
 				for (int j = 12; j<=17; j++) {
@@ -86,9 +92,21 @@ public class ResultCalculator : MonoBehaviour {
 				}
 				double totalPræf = vt + adt + takt + knaest; 
 				robj.Visuel = Math.Round ((vt / totalPræf) * 100); 
+				if(double.IsNaN(robj.Visuel)){
+					robj.Visuel = 0.0;
+				}
 				robj.Auditiv = Math.Round((adt / totalPræf) * 100); 
+				if(double.IsNaN(robj.Auditiv)){
+					robj.Auditiv = 0.0;
+				}
 				robj.Taktil = Math.Round((takt / totalPræf) * 100); 
+				if(double.IsNaN(robj.Taktil)){
+					robj.Taktil = 0.0;
+				}
 				robj.Kinaestisk =Math.Round( (knaest / totalPræf) * 100);
+				if(double.IsNaN(robj.Kinaestisk)){
+					robj.Kinaestisk = 0.0;
+				}
 				robj.UserID = rm.UserID;
 				robj.UserType = rm.UserType;
 				robj.StudentName = rm.StudentName;
