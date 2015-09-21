@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class POSTAnswersController : MonoBehaviour {
 
@@ -56,6 +57,9 @@ public class POSTAnswersController : MonoBehaviour {
 		toggles.Add(bev);
 
 		options = new List<QuizPartModel> ();
+		if (PlayerPrefs.HasKey ("TestToSave_" + PlayerPrefs.GetInt ("UserIDforTest"))) {
+			LoadAnswersFromPlayerPrefs(PlayerPrefs.GetString("TestToSave_"+PlayerPrefs.GetInt("UserIDforTest")));
+		}
 	}
 	
 	// Update is called once per frame
@@ -91,5 +95,36 @@ public class POSTAnswersController : MonoBehaviour {
 			POSTResultCalculator cal = gameObject.GetComponent<POSTResultCalculator>();
 			cal.ParseToJsonResult(rm, command);
 	}
+	public void LoadAnswersFromPlayerPrefs(string encryptedJSON){
+		
+		JSONObject json = new JSONObject (encryptedJSON);
+		print (json.ToString ());
+		JSONObject arr = json.GetField("Answers");
+		print (arr.ToString ());
+		int count = 0;
+		for (int i=0; i<=toggles.Count-1; i++) {
+			int limit = toggles[i].Length;
+			for(int x =0; x<limit; x++){
+				bool b = Convert.ToBoolean(arr[count].GetField("Selected").ToString());
+				if(b){
 
-}
+					toggles[i][x].isOn = true;
+					count++;
+				}else if(!b){
+					toggles[i][x].isOn =false;
+			
+					count++;	
+				}
+			}
+		}
+	
+		}
+		
+
+
+		
+	}
+
+
+
+

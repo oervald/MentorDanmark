@@ -17,7 +17,7 @@ public class MenuResultHandler : MonoBehaviour {
 	
 	}
 
-	public void ParseJson(JSONObject menuResults, JSONObject teachingPlans){
+	public void ParseJsonFromFacade(JSONObject menuResults, JSONObject teachingPlans){
 		JSONObject arr = new JSONObject (JSONObject.Type.ARRAY);
 		ResultModel rm;
 		QuizOptionModel qom;
@@ -69,6 +69,7 @@ public class MenuResultHandler : MonoBehaviour {
 		resCal.CalculateResult (resultModels); 
 	
 	}
+
 
 
 }

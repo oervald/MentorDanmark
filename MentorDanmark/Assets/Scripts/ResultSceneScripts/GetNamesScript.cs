@@ -40,7 +40,7 @@ public class GetNamesScript : MonoBehaviour {
 				string data = www.text;
 				JSONObject teachingPlans = new JSONObject(data);
 				MenuResultHandler mh = gameObject.GetComponent<MenuResultHandler>();
-				mh.ParseJson(menuResults,teachingPlans);
+				mh.ParseJsonFromFacade(menuResults,teachingPlans);
 				
 			}
 
