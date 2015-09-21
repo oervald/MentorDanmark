@@ -46,7 +46,6 @@ public class ListItem3 : MonoBehaviour {
 		height = content.GetComponent<LayoutElement> ().preferredHeight;
 		if (!foldout) {
 			content.GetComponent<LayoutElement> ().preferredHeight = headlineHeight;
-			
 			foldoutText.text = "+";
 		} 
 		else {
@@ -93,7 +92,7 @@ public class ListItem3 : MonoBehaviour {
 		ResetHeight ();
 
 		if (foldout) {
-		//	foldoutText.GetComponentInChildren<Text> ().text = "-";
+			foldoutText.GetComponentInChildren<Text> ().text = "-";
 			content.GetComponent<LayoutElement>().DOPreferredSize(Vector2.up*height + Vector2.left, foldoutSpeed, false).OnComplete(FinishFold);
 		} 
 		else {

@@ -28,13 +28,13 @@ public class ListItemStudent : ListItem2 {
 	[Header("Text")]
 	public Text holistiskHeadline;
 	public Text holistiskText;
-	public Text holistiskHighText;
+	//public Text holistiskHighText;
 	public Text analytikHeadline;
 	public Text analytikText;
-	public Text analyiskHighText;
+	//public Text analyiskHighText;
 	public Text visuelHeadline;
 	public Text visuelText;
-	public Text visuelHighText;
+	//public Text visuelHighText;
 	public Text auditivHeadline;
 	public Text auditivText;
 	public Text taktilHeadline;
@@ -42,7 +42,7 @@ public class ListItemStudent : ListItem2 {
 	public Text kineastetiskHeadline;
 	public Text kineastetiskText;
 	public Text buttonText;
-	public Text envir;
+	//public Text envir;
 
 	public bool tempFoldout = true;
 	private int valueUserID;
