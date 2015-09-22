@@ -173,9 +173,9 @@ public class ListItemStudent : ListItem2 {
 		Text[] arrAuditiv = auditivHighlightPanel.GetComponentsInChildren<Text>();
 		Text[] arrTaktil = taktilHighlightPanel.GetComponentsInChildren<Text>();
 		
+		print (arrAnalytisk.Count());
 		
-		
-		for(int q=0; q< 5; q++){
+		for(int q=0; q< 4; q++){
 			arrAnalytisk[q].text =ds.DescpriptionAnalystPart2[q];
 			arrHolistisk[q].text = ds.DescpriptionHolisticPart2[q];
 			arrVisuel[q].text = ds.DescpriptionVisualPart2[q];
@@ -194,44 +194,50 @@ public class ListItemStudent : ListItem2 {
 		SubTitleEnvironment.text = ds.SubTitleEnvironment;
 		
 		Text[] arrLaeringsMiljoe = læringsstilsmiljøHighlightPanel.GetComponentsInChildren<Text>();
-		
+		List<string> texts = new List<string>();
+	;
+		switch(resultObject.Lys){
+		case 1:
+			texts.Add(ds.EnvirLightOn);
+			break;
+		case 2:
+			texts.Add(ds.EnvirLightOff);
+			break;
+		};
 		
 		switch(resultObject.Lyd){
 		case 1:
-			arrLaeringsMiljoe[0].text = ds.EnvirSoundOff;
+			texts.Add(ds.EnvirSoundOff);
 			break;
 		case 2:
-			arrLaeringsMiljoe[0].text = ds.EnvirSoundOn;
+			texts.Add(ds.EnvirSoundOn);
 			break;
 		};
-		switch(resultObject.Lys){
-		case 1:
-			arrLaeringsMiljoe[1].text = ds.EnvirLightOn;
-			break;
-		case 2:
-			arrLaeringsMiljoe[1].text = ds.EnvirLightOff;
-			break;
-		};
+	
 		switch(resultObject.Temperatur){
 		case 1:
-			arrLaeringsMiljoe[2].text = ds.EnvirTempHot;
+			texts.Add(ds.EnvirTempHot);
 			break;
 		case 2:
-			arrLaeringsMiljoe[2].text = ds.EnvirTempCold;
+			texts.Add(ds.EnvirTempCold);
 			break;
 		};
 		
 		switch(resultObject.Design){
 		case 1:
-			arrLaeringsMiljoe[3].text = ds.EnvirConfertTable;
+			texts.Add(ds.EnvirConfertTable);
 			break;
 		case 2:
-			arrLaeringsMiljoe[3].text= ds.EnvirConfertSofa;
+			texts.Add(ds.EnvirConfertSofa);
 			break;
 		};
 		
-		if(resultObject.Bevaeglse.Equals(1)){
-			arrLaeringsMiljoe[4].text= ds.EnvirMovment;};
+		if (resultObject.Bevaeglse.Equals (1)) {
+			texts.Add (ds.EnvirMovment);
+		}
+		for (int i =0; i<texts.Count; i++) {
+			arrLaeringsMiljoe[i].text = (i+1)+texts[i];
+		}
 
 		if (buttonBool) {
 			buttonText.text = ds.BtnTxtTagOm;
