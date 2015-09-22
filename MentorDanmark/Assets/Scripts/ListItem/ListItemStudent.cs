@@ -24,6 +24,8 @@ public class ListItemStudent : ListItem2 {
 	public Image auditivImage;
 	public Image taktilImage;
 	public Image kineastetiskImage;
+	public Image NullImage;
+
 	
 	[Header("Text")]
 	public Text holistiskHeadline;
@@ -157,6 +159,8 @@ public class ListItemStudent : ListItem2 {
 			kineastetiskHeadline.text = ds.TitleKinesthetic2Part1 + resultObject.Kinaestisk + ds.TitleKinesthetic2Part2;
 			visuelHeadline.text = ds.TitleVisual2Part1 + resultObject.Visuel + ds.TitleVisual2Part2;
 		}
+
+
 		
 		SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
 		analytikText.text = ds.DescpriptionAnalyst;
@@ -259,6 +263,7 @@ public class ListItemStudent : ListItem2 {
 		auditivImage.gameObject.SetActive (false);
 		taktilImage.gameObject.SetActive (false);
 		kineastetiskImage.gameObject.SetActive (false);
+		NullImage.gameObject.SetActive (false);
 	}
 	
 	public void setImagesToTrue(){
@@ -268,6 +273,7 @@ public class ListItemStudent : ListItem2 {
 		auditivImage.gameObject.SetActive (true);
 		taktilImage.gameObject.SetActive (true);
 		kineastetiskImage.gameObject.SetActive (true);
+		NullImage.gameObject.SetActive (true);
 	}
 
 	// Holistisk er altid 100% og i bagrunden, ændre analytik til og fylde de % den skal
@@ -285,6 +291,9 @@ public class ListItemStudent : ListItem2 {
 		taktilFloat = taktilFloat / 100;
 		float kineastetiskFloat = float.Parse(resultobjecValue.Kinaestisk.ToString());
 		kineastetiskFloat = kineastetiskFloat / 100;
+		float visuelFloat = float.Parse(resultobjecValue.Visuel.ToString());
+		visuelFloat = visuelFloat / 100;
+		visuelImage.fillAmount = visuelFloat + taktilFloat + auditivFloat + kineastetiskFloat;
 		auditivImage.fillAmount = kineastetiskFloat + taktilFloat + auditivFloat;
 		taktilImage.fillAmount = kineastetiskFloat + taktilFloat;
 		kineastetiskImage.fillAmount = kineastetiskFloat;
