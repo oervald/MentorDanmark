@@ -30,13 +30,10 @@ public class ListItemStudent : ListItem2 {
 	[Header("Text")]
 	public Text holistiskHeadline;
 	public Text holistiskText;
-	//public Text holistiskHighText;
 	public Text analytikHeadline;
 	public Text analytikText;
-	//public Text analyiskHighText;
 	public Text visuelHeadline;
 	public Text visuelText;
-	//public Text visuelHighText;
 	public Text auditivHeadline;
 	public Text auditivText;
 	public Text taktilHeadline;
@@ -44,13 +41,13 @@ public class ListItemStudent : ListItem2 {
 	public Text kineastetiskHeadline;
 	public Text kineastetiskText;
 	public Text buttonText;
-	//public Text envir;
 
 	public bool tempFoldout = true;
 	private int valueUserID;
 	private string valueUserType;
 	public ResultObject resultobjecValue;
 	public bool testTaken;
+	private int envirCount = 0;
 
 
 	[Header ("HiglightPanels")]
@@ -60,7 +57,10 @@ public class ListItemStudent : ListItem2 {
 	public GameObject auditivHighlightPanel;
 	public GameObject taktilHighlightPanel;
 	public GameObject kinæstetiskHighlightPanel;
-	public GameObject læringsstilsmiljøHighlightPanel;
+	public GameObject læringsstilsmiljøHighlightContainer;
+
+	[Header ("Prefabs")]
+	public GameObject Highlight;
 
 	// Use this for initialization
 	public override void Start () {
@@ -192,62 +192,83 @@ public class ListItemStudent : ListItem2 {
 		taktilText.text = ds.DescpriptionTactile; 
 		kineastetiskText.text = ds.DescpriptionKinesthetic; 
 		SubTitleEnvironment.text = ds.SubTitleEnvironment;
-		
-		Text[] arrLaeringsMiljoe = læringsstilsmiljøHighlightPanel.GetComponentsInChildren<Text>();
-		List<string> texts = new List<string>();
-	;
+
+	
+		envirCount = 0;
 		switch(resultObject.Lys){
 		case 1:
-			texts.Add(ds.EnvirLightOn);
+			envirCount++;
+			addHighlights(ds.EnvirLightOn, læringsstilsmiljøHighlightContainer);
 			break;
 		case 2:
-			texts.Add(ds.EnvirLightOff);
+			envirCount++;
+			addHighlights(ds.EnvirLightOff, læringsstilsmiljøHighlightContainer);
 			break;
 		};
-		
+
 		switch(resultObject.Lyd){
 		case 1:
-			texts.Add(ds.EnvirSoundOff);
+			envirCount++;
+			addHighlights(ds.EnvirSoundOff, læringsstilsmiljøHighlightContainer);
 			break;
 		case 2:
-			texts.Add(ds.EnvirSoundOn);
+			envirCount++;
+			addHighlights(ds.EnvirSoundOn, læringsstilsmiljøHighlightContainer);
 			break;
 		};
-	
+
 		switch(resultObject.Temperatur){
 		case 1:
-			texts.Add(ds.EnvirTempHot);
+			envirCount++;
+			addHighlights(ds.EnvirTempHot, læringsstilsmiljøHighlightContainer);
 			break;
 		case 2:
-			texts.Add(ds.EnvirTempCold);
+			envirCount++;
+			addHighlights(ds.EnvirTempCold,læringsstilsmiljøHighlightContainer);
 			break;
 		};
-		
+
 		switch(resultObject.Design){
 		case 1:
-			texts.Add(ds.EnvirConfertTable);
+			envirCount++;
+			addHighlights(ds.EnvirConfertTable, læringsstilsmiljøHighlightContainer);
 			break;
 		case 2:
-			texts.Add(ds.EnvirConfertSofa);
+			envirCount++;
+			addHighlights(ds.EnvirConfertSofa, læringsstilsmiljøHighlightContainer);
 			break;
 		};
-		
-		if (resultObject.Bevaeglse.Equals (1)) {
-			texts.Add (ds.EnvirMovment);
-		}
-		for (int i =0; i<texts.Count; i++) {
-			arrLaeringsMiljoe[i].text = (i+1)+texts[i];
-		}
 
+		switch(resultObject.Bevaeglse){
+		case 1:
+			envirCount++;
+			addHighlights(ds.EnvirConfertTable, læringsstilsmiljøHighlightContainer);
+			break;
+		};
+
+		switch (envirCount) {
+		case 0:
+			addHighlights("Du har ikke valgt noget i læringsmiljø", læringsstilsmiljøHighlightContainer);
+			break;
+		};
+			
 		if (buttonBool) {
 			buttonText.text = ds.BtnTxtTagOm;
 		} else if (!buttonBool) {
 			buttonText.text = "Fortsæt Test";
 		}
 	}
-	// sætter diagramerne i toppen, til falsk og true, da ellers ville ListItem ikke virke, kan måske slettes når ListItem er ændret.
-	public void onHeadlineClick( ){
 	
+	public void addHighlights(string highlight, GameObject highLightContainer){
+		GameObject tempHighlight = Instantiate (Highlight) as GameObject;
+		Text[] temp = tempHighlight.GetComponentsInChildren<Text>();
+		temp[0].text = envirCount.ToString() + ".";
+		temp[1].text = highlight;
+		tempHighlight.transform.SetParent (highLightContainer.transform);
+		tempHighlight.transform.localScale = new Vector3 (1, 1, 1);
+	}
+
+	public void onHeadlineClick( ){
 
 		if (tempFoldout == false) {
 			setImagesToTrue ();
@@ -282,14 +303,12 @@ public class ListItemStudent : ListItem2 {
 		NullImage.gameObject.SetActive (true);
 	}
 
-	// Holistisk er altid 100% og i bagrunden, ændre analytik til og fylde de % den skal
 	public void setHAImage(){
 		float analytikFloat = float.Parse(resultobjecValue.Analystisk.ToString());
 		analytikFloat = analytikFloat / 100;
 		analytikImage.fillAmount = analytikFloat;
 	}
 
-	//Visuel er altid 100% og i bagrunden, ændre de 3 andre til at fylde de % de skal
 	 public void setVATKImage(){
 		float auditivFloat = float.Parse (resultobjecValue.Auditiv.ToString ());
 		auditivFloat = auditivFloat / 100;
