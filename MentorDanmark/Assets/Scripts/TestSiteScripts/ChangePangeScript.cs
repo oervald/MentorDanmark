@@ -52,6 +52,9 @@ public class ChangePangeScript : MonoBehaviour {
 	void Update () {
 		
 	}
+	void OnApplicationQuit(){
+		pac.SaveAnswers ("SaveLocal");
+	}
 	
 	public void ChangePage(){
 		saveLocal ();
