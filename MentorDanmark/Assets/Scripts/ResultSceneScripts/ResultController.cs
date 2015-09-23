@@ -14,9 +14,8 @@ public class ResultController : MonoBehaviour {
 		resultobjec = new ResultObject ();
 
 	}
+
 	public void SetupPage(List<ResultObject> resultObjects){
-		// opret prefab.setupPage(object)
-		// opret space panel
 
 		foreach (ResultObject ro in resultObjects) {
 			GameObject tempPrefablp = Instantiate (prefabList) as GameObject;

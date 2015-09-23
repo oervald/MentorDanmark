@@ -67,7 +67,6 @@ public class ListItemStudent : ListItem2 {
 		base.Start();
 		onHeadlineClick ();
 		setImagesToFalse ();
-
 	
 	}
 	
@@ -76,6 +75,7 @@ public class ListItemStudent : ListItem2 {
 		base.Update ();
 	}
 
+	// SetupPage lavet et ListItem object, og tilføjere den til containern.
 	public void SetupPage(ResultObject resultObject){
 
 			resultobjecValue = resultObject;
@@ -113,6 +113,8 @@ public class ListItemStudent : ListItem2 {
 		ResetHeight ();
 	
 	}
+
+
 	void SetupPageSwitch(ResultObject resultObject, DanishStrings ds, bool buttonBool){
 
 		if( resultObject.Analystisk > resultObject.Holistisk){
@@ -253,7 +255,8 @@ public class ListItemStudent : ListItem2 {
 			buttonText.text = "Fortsæt Test";
 		}
 	}
-	
+	// Insætter string highlight som er det man ønsker at insætte, og highLightContainer er det panel som det ønskes at tiljøjeres til.
+	// envirCount er en int det bliver ++ når den skal tilføjes, så de bliver 1 2 3 osv.
 	public void addHighlights(string highlight, GameObject highLightContainer){
 		GameObject tempHighlight = Instantiate (Highlight) as GameObject;
 		Text[] temp = tempHighlight.GetComponentsInChildren<Text>();
@@ -298,6 +301,7 @@ public class ListItemStudent : ListItem2 {
 		NullImage.gameObject.SetActive (true);
 	}
 
+	// de næste to juster fillAmount på billederne/diagramerne.
 	public void setHAImage(){
 		float analytikFloat = float.Parse(resultobjecValue.Analystisk.ToString());
 		analytikFloat = analytikFloat / 100;
@@ -318,6 +322,8 @@ public class ListItemStudent : ListItem2 {
 		taktilImage.fillAmount = kineastetiskFloat + taktilFloat;
 		kineastetiskImage.fillAmount = kineastetiskFloat;
 	}
+
+	//loader TestSceen
 	public void GoToTest(){
 		PlayerPrefs.SetInt ("UserIDforTest", resultobjecValue.UserID);
 		PlayerPrefs.SetString ("UserTypeforTest", resultobjecValue.UserType);
