@@ -13,40 +13,40 @@ public class DanishStrings : MonoBehaviour {
 	
 	public DanishStrings (){
 		descriptionAnalystArray = new string[] {
-			"1. Planlægge en rækkefølge for\n\topgaverne fra starten.",
-			"2. Gå direkte i gang med opgaverne\n\t– én ad gangen.",
-			"3. Have god orden og struktur i\n\ttingene – gerne konkrete\t\t\t\t\t\tanvisninger.",
-			"4. Give tid til detaljerne."
+			"Planlægge en rækkefølge for opgaverne fra starten.",
+			"Gå direkte i gang med opgaverne – én ad gangen.",
+			"Have god orden og struktur i tingene – gerne konkrete anvisninger.",
+			"Give tid til detaljerne."
 		};
 		descriptionHolistiskArray = new string[]{
-			"1. Relatere opgaven til \n\tvirkeligheden.",
-			"2. Give dig tid til at undersøge hele \t\t\topgaven/stoffet.",
-			"3. Variere opgaverne. Du må gerne \t\t\tarbejde med flere på én gang.",
-			"4. Følge din intuition."
+			"Relatere opgaven til virkeligheden.",
+			"Give dig tid til at undersøge hele opgaven/stoffet.",
+			"Variere opgaverne. Du må gerne arbejde med flere på én gang.",
+			"Følge din intuition."
 		};
 		descriptionVisualArray = new string []{
-			"1. Trykte billeder og tekster.",
-			"2. Grafer og illustrationer.",
-			"3. Noter, mens du lærer.",
-			"4. Indre billeder, mens du lærer"
+			"Trykte billeder og tekster.",
+			"Grafer og illustrationer.",
+			"Noter, mens du lærer.",
+			"Indre billeder, mens du lærer"
 		};
 		descriptionAuditivtArray = new string []{
-			"1. Lydbøger.",
-			"2. At tale med andre om stoffet",
-			"3. At bede om at få opgaven forklaret",
-			"4. Små huskeregler og remser"
+			"Lydbøger.",
+			"At tale med andre om stoffet",
+			"At bede om at få opgaven forklaret",
+			"Små huskeregler og remser"
 		};
 		descriptionTaktilArray = new string[]{
-			"1. At lave noter, illustrationer.",
-			"2. At strege nøgleord ud i tekster.",
-			"3. At bede bruge spil til at lærer\n\tstoffet.",
-			"4. At sidde med noget i hånden, e.g.\n\ten stressbold"
+			"At lave noter, illustrationer.",
+			"At strege nøgleord ud i tekster.",
+			"At bede bruge spil til at lærer stoffet.",
+			"At sidde med noget i hånden, e.g. en stressbold"
 		};
 		descriptionKinestheticArray = new string[]{
-			"1. Walk’n’talk, mens du arbejder.",
-			"2. At lave illustrationer eller modeller\n\ti stor skala af det, du lærer.",
-			"3. At stå op, mens du arbejder.",
-			"4. Fysiske aktiviteter, e.g. \n\tværkstedsarbejde eller\n\teksperimenter "
+			"Walk’n’talk, mens du arbejder.",
+			"At lave illustrationer eller modeller i stor skala af det, du lærer.",
+			"At stå op, mens du arbejder.",
+			"Fysiske aktiviteter, e.g. værkstedsarbejde eller eksperimenter "
 		};
 	}
 	

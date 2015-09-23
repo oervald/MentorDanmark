@@ -165,26 +165,21 @@ public class ListItemStudent : ListItem2 {
 		SubTitleThinkingStyle.text = ds.SubTitleThinkingStyle;
 		analytikText.text = ds.DescpriptionAnalyst;
 		string[] descriptionAnalyst2 = ds.DescpriptionAnalystPart2;
-		
-		Text[] arrAnalytisk = analytiskHighlightPanel.GetComponentsInChildren<Text>();
-		Text[] arrHolistisk = holistiskHighlightPanel.GetComponentsInChildren<Text>();
-		Text[] arrVisuel = visuelHighlightPanel.GetComponentsInChildren<Text>();
-		Text[] arrKinaestetisk = kinæstetiskHighlightPanel.GetComponentsInChildren<Text>();
-		Text[] arrAuditiv = auditivHighlightPanel.GetComponentsInChildren<Text>();
-		Text[] arrTaktil = taktilHighlightPanel.GetComponentsInChildren<Text>();
-		
-		print (arrAnalytisk.Count());
-		
+
+
+
+		envirCount = 0;
 		for(int q=0; q< 4; q++){
-			arrAnalytisk[q].text =ds.DescpriptionAnalystPart2[q];
-			arrHolistisk[q].text = ds.DescpriptionHolisticPart2[q];
-			arrVisuel[q].text = ds.DescpriptionVisualPart2[q];
-			arrKinaestetisk[q].text = ds.descpriptionKinestheticPart2[q];
-			arrAuditiv[q].text = ds.DescpriptionAuditoryPart2[q];
-			arrTaktil[q].text = ds.descpriptionTactilePart2[q];
-			
+			envirCount++;
+			addHighlights(ds.DescpriptionAnalystPart2[q], analytiskHighlightPanel);
+			addHighlights(ds.DescpriptionHolisticPart2[q], holistiskHighlightPanel);
+			addHighlights(ds.DescpriptionVisualPart2[q], visuelHighlightPanel);
+			addHighlights(ds.descpriptionKinestheticPart2[q], kinæstetiskHighlightPanel);
+			addHighlights(ds.DescpriptionAuditoryPart2[q], auditivHighlightPanel);
+			addHighlights(ds.descpriptionTactilePart2[q], taktilHighlightPanel);
 		}
-		
+
+			
 		holistiskText.text = ds.DescpriptionHolistic; 
 		SubTitlePreferences.text = ds.SubTitlePreferences;
 		visuelText.text = ds.DescpriptionVisual; 
@@ -242,7 +237,7 @@ public class ListItemStudent : ListItem2 {
 		switch(resultObject.Bevaeglse){
 		case 1:
 			envirCount++;
-			addHighlights(ds.EnvirConfertTable, læringsstilsmiljøHighlightContainer);
+			addHighlights(ds.EnvirMovment, læringsstilsmiljøHighlightContainer);
 			break;
 		};
 
@@ -282,7 +277,7 @@ public class ListItemStudent : ListItem2 {
 
 	}
 
-	
+	//sætter billederne/diagramerne til false, da de ellers ville blive vist selv sammefoldet.
 	public void setImagesToFalse(){
 		holistiskImage.gameObject.SetActive (false);
 		analytikImage.gameObject.SetActive (false);
