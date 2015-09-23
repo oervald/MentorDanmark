@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\ResultSceneScripts\MenuResultFacade.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\MenuResultHandler.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ONLYFORTEST.cs" />
-     <Compile Include="Assets\Scripts\ResultSceneScripts\OnlyOnePanelVisibleScript.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultCalculator.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultController.cs" />
      <Compile Include="Assets\Scripts\ResultSceneScripts\ResultModel.cs" />
